@@ -1,0 +1,14 @@
+/home/erickr/Documentos/C#/03 - Aprendizado 3/03 - Aprendizado 3/bin/Debug/net9.0/03 - Aprendizado 3
+/home/erickr/Documentos/C#/03 - Aprendizado 3/03 - Aprendizado 3/bin/Debug/net9.0/03 - Aprendizado 3.deps.json
+/home/erickr/Documentos/C#/03 - Aprendizado 3/03 - Aprendizado 3/bin/Debug/net9.0/03 - Aprendizado 3.runtimeconfig.json
+/home/erickr/Documentos/C#/03 - Aprendizado 3/03 - Aprendizado 3/bin/Debug/net9.0/03 - Aprendizado 3.dll
+/home/erickr/Documentos/C#/03 - Aprendizado 3/03 - Aprendizado 3/bin/Debug/net9.0/03 - Aprendizado 3.pdb
+/home/erickr/Documentos/C#/03 - Aprendizado 3/03 - Aprendizado 3/obj/Debug/net9.0/03 - Aprendizado 3.GeneratedMSBuildEditorConfig.editorconfig
+/home/erickr/Documentos/C#/03 - Aprendizado 3/03 - Aprendizado 3/obj/Debug/net9.0/03 - Aprendizado 3.AssemblyInfoInputs.cache
+/home/erickr/Documentos/C#/03 - Aprendizado 3/03 - Aprendizado 3/obj/Debug/net9.0/03 - Aprendizado 3.AssemblyInfo.cs
+/home/erickr/Documentos/C#/03 - Aprendizado 3/03 - Aprendizado 3/obj/Debug/net9.0/03 - Aprendizado 3.csproj.CoreCompileInputs.cache
+/home/erickr/Documentos/C#/03 - Aprendizado 3/03 - Aprendizado 3/obj/Debug/net9.0/03 - Aprendizado 3.dll
+/home/erickr/Documentos/C#/03 - Aprendizado 3/03 - Aprendizado 3/obj/Debug/net9.0/refint/03 - Aprendizado 3.dll
+/home/erickr/Documentos/C#/03 - Aprendizado 3/03 - Aprendizado 3/obj/Debug/net9.0/03 - Aprendizado 3.pdb
+/home/erickr/Documentos/C#/03 - Aprendizado 3/03 - Aprendizado 3/obj/Debug/net9.0/03 - Aprendizado 3.genruntimeconfig.cache
+/home/erickr/Documentos/C#/03 - Aprendizado 3/03 - Aprendizado 3/obj/Debug/net9.0/ref/03 - Aprendizado 3.dll

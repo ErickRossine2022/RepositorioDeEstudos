@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "OmPUc3oaUhc=",
+  "success": true,
+  "projectFilePath": "/home/erickr/Documentos/C#/Exercicio/03 - Aprendizado 3/03 - Aprendizado 3.csproj",
+  "expectedPackageFiles": [
+    "/home/erickr/.nuget/packages/microsoft.aspnetcore.app.ref/9.0.8/microsoft.aspnetcore.app.ref.9.0.8.nupkg.sha512"
+  ],
+  "logs": []
+}
