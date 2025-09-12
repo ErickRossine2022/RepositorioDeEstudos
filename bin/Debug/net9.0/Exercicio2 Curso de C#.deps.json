@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v9.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v9.0": {
+      "Exercicio2 Curso de C#/1.0.0": {
+        "runtime": {
+          "Exercicio2 Curso de C#.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Exercicio2 Curso de C#/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
