@@ -1,0 +1,14 @@
+/home/erick/Documentos/C#/Exercicios3/bin/Debug/net9.0/Exercicios3
+/home/erick/Documentos/C#/Exercicios3/bin/Debug/net9.0/Exercicios3.deps.json
+/home/erick/Documentos/C#/Exercicios3/bin/Debug/net9.0/Exercicios3.runtimeconfig.json
+/home/erick/Documentos/C#/Exercicios3/bin/Debug/net9.0/Exercicios3.dll
+/home/erick/Documentos/C#/Exercicios3/bin/Debug/net9.0/Exercicios3.pdb
+/home/erick/Documentos/C#/Exercicios3/obj/Debug/net9.0/Exercicios3.GeneratedMSBuildEditorConfig.editorconfig
+/home/erick/Documentos/C#/Exercicios3/obj/Debug/net9.0/Exercicios3.AssemblyInfoInputs.cache
+/home/erick/Documentos/C#/Exercicios3/obj/Debug/net9.0/Exercicios3.AssemblyInfo.cs
+/home/erick/Documentos/C#/Exercicios3/obj/Debug/net9.0/Exercicios3.csproj.CoreCompileInputs.cache
+/home/erick/Documentos/C#/Exercicios3/obj/Debug/net9.0/Exercicios3.dll
+/home/erick/Documentos/C#/Exercicios3/obj/Debug/net9.0/refint/Exercicios3.dll
+/home/erick/Documentos/C#/Exercicios3/obj/Debug/net9.0/Exercicios3.pdb
+/home/erick/Documentos/C#/Exercicios3/obj/Debug/net9.0/Exercicios3.genruntimeconfig.cache
+/home/erick/Documentos/C#/Exercicios3/obj/Debug/net9.0/ref/Exercicios3.dll

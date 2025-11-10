@@ -1,0 +1,14 @@
+C:\Users\Erick_Rossine\Documents\C#\Execicio6\bin\Debug\net9.0\Execicio6.exe
+C:\Users\Erick_Rossine\Documents\C#\Execicio6\bin\Debug\net9.0\Execicio6.deps.json
+C:\Users\Erick_Rossine\Documents\C#\Execicio6\bin\Debug\net9.0\Execicio6.runtimeconfig.json
+C:\Users\Erick_Rossine\Documents\C#\Execicio6\bin\Debug\net9.0\Execicio6.dll
+C:\Users\Erick_Rossine\Documents\C#\Execicio6\bin\Debug\net9.0\Execicio6.pdb
+C:\Users\Erick_Rossine\Documents\C#\Execicio6\obj\Debug\net9.0\Execicio6.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Erick_Rossine\Documents\C#\Execicio6\obj\Debug\net9.0\Execicio6.AssemblyInfoInputs.cache
+C:\Users\Erick_Rossine\Documents\C#\Execicio6\obj\Debug\net9.0\Execicio6.AssemblyInfo.cs
+C:\Users\Erick_Rossine\Documents\C#\Execicio6\obj\Debug\net9.0\Execicio6.csproj.CoreCompileInputs.cache
+C:\Users\Erick_Rossine\Documents\C#\Execicio6\obj\Debug\net9.0\Execicio6.dll
+C:\Users\Erick_Rossine\Documents\C#\Execicio6\obj\Debug\net9.0\refint\Execicio6.dll
+C:\Users\Erick_Rossine\Documents\C#\Execicio6\obj\Debug\net9.0\Execicio6.pdb
+C:\Users\Erick_Rossine\Documents\C#\Execicio6\obj\Debug\net9.0\Execicio6.genruntimeconfig.cache
+C:\Users\Erick_Rossine\Documents\C#\Execicio6\obj\Debug\net9.0\ref\Execicio6.dll

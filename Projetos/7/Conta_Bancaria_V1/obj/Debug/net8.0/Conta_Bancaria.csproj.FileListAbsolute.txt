@@ -1,0 +1,14 @@
+/home/erickrossine/Documentos/C#/Conta_Bancaria/bin/Debug/net8.0/Conta_Bancaria
+/home/erickrossine/Documentos/C#/Conta_Bancaria/bin/Debug/net8.0/Conta_Bancaria.deps.json
+/home/erickrossine/Documentos/C#/Conta_Bancaria/bin/Debug/net8.0/Conta_Bancaria.runtimeconfig.json
+/home/erickrossine/Documentos/C#/Conta_Bancaria/bin/Debug/net8.0/Conta_Bancaria.dll
+/home/erickrossine/Documentos/C#/Conta_Bancaria/bin/Debug/net8.0/Conta_Bancaria.pdb
+/home/erickrossine/Documentos/C#/Conta_Bancaria/obj/Debug/net8.0/Conta_Bancaria.GeneratedMSBuildEditorConfig.editorconfig
+/home/erickrossine/Documentos/C#/Conta_Bancaria/obj/Debug/net8.0/Conta_Bancaria.AssemblyInfoInputs.cache
+/home/erickrossine/Documentos/C#/Conta_Bancaria/obj/Debug/net8.0/Conta_Bancaria.AssemblyInfo.cs
+/home/erickrossine/Documentos/C#/Conta_Bancaria/obj/Debug/net8.0/Conta_Bancaria.csproj.CoreCompileInputs.cache
+/home/erickrossine/Documentos/C#/Conta_Bancaria/obj/Debug/net8.0/Conta_Bancaria.dll
+/home/erickrossine/Documentos/C#/Conta_Bancaria/obj/Debug/net8.0/refint/Conta_Bancaria.dll
+/home/erickrossine/Documentos/C#/Conta_Bancaria/obj/Debug/net8.0/Conta_Bancaria.pdb
+/home/erickrossine/Documentos/C#/Conta_Bancaria/obj/Debug/net8.0/Conta_Bancaria.genruntimeconfig.cache
+/home/erickrossine/Documentos/C#/Conta_Bancaria/obj/Debug/net8.0/ref/Conta_Bancaria.dll

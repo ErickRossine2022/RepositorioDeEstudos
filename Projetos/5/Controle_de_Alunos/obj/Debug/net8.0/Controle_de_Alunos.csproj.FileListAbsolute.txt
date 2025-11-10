@@ -1,0 +1,15 @@
+/home/erickrossine/Documentos/C#/Controle_de_Alunos/bin/Debug/net8.0/Controle_de_Alunos
+/home/erickrossine/Documentos/C#/Controle_de_Alunos/bin/Debug/net8.0/Controle_de_Alunos.deps.json
+/home/erickrossine/Documentos/C#/Controle_de_Alunos/bin/Debug/net8.0/Controle_de_Alunos.runtimeconfig.json
+/home/erickrossine/Documentos/C#/Controle_de_Alunos/bin/Debug/net8.0/Controle_de_Alunos.dll
+/home/erickrossine/Documentos/C#/Controle_de_Alunos/bin/Debug/net8.0/Controle_de_Alunos.pdb
+/home/erickrossine/Documentos/C#/Controle_de_Alunos/obj/Debug/net8.0/Controle_de_Alunos.GeneratedMSBuildEditorConfig.editorconfig
+/home/erickrossine/Documentos/C#/Controle_de_Alunos/obj/Debug/net8.0/Controle_de_Alunos.AssemblyInfoInputs.cache
+/home/erickrossine/Documentos/C#/Controle_de_Alunos/obj/Debug/net8.0/Controle_de_Alunos.AssemblyInfo.cs
+/home/erickrossine/Documentos/C#/Controle_de_Alunos/obj/Debug/net8.0/Controle_de_Alunos.csproj.CoreCompileInputs.cache
+/home/erickrossine/Documentos/C#/Controle_de_Alunos/obj/Debug/net8.0/Controle_de_Alunos.dll
+/home/erickrossine/Documentos/C#/Controle_de_Alunos/obj/Debug/net8.0/refint/Controle_de_Alunos.dll
+/home/erickrossine/Documentos/C#/Controle_de_Alunos/obj/Debug/net8.0/Controle_de_Alunos.pdb
+/home/erickrossine/Documentos/C#/Controle_de_Alunos/obj/Debug/net8.0/Controle_de_Alunos.genruntimeconfig.cache
+/home/erickrossine/Documentos/C#/Controle_de_Alunos/obj/Debug/net8.0/ref/Controle_de_Alunos.dll
+/home/erickrossine/Documentos/C#/Controle_de_Alunos/obj/Debug/net8.0/Controle_de_Alunos.sourcelink.json

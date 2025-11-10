@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "HTspQazd1o8=",
+  "success": true,
+  "projectFilePath": "/home/erickrossine/Documentos/C#/Controle_de_Alunos/Controle_de_Alunos.csproj",
+  "expectedPackageFiles": [
+    "/home/erickrossine/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.20/microsoft.aspnetcore.app.ref.8.0.20.nupkg.sha512",
+    "/home/erickrossine/.nuget/packages/microsoft.netcore.app.host.linux-x64/8.0.20/microsoft.netcore.app.host.linux-x64.8.0.20.nupkg.sha512"
+  ],
+  "logs": []
+}

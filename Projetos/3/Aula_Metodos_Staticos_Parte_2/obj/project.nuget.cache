@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "+3zBp+vu85k=",
+  "success": true,
+  "projectFilePath": "/home/erickrossine/Documentos/C#/Aula_Metodos_Staticos_Parte_2/Aula_Metodos_Staticos.csproj",
+  "expectedPackageFiles": [
+    "/home/erickrossine/.nuget/packages/microsoft.aspnetcore.app.ref/9.0.9/microsoft.aspnetcore.app.ref.9.0.9.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "fWANtWK6ERk=",
+  "success": true,
+  "projectFilePath": "/home/erickrossine/Documentos/C#/Construtores_Estudo/Construtores_Estudo.csproj",
+  "expectedPackageFiles": [
+    "/home/erickrossine/.nuget/packages/microsoft.aspnetcore.app.ref/9.0.9/microsoft.aspnetcore.app.ref.9.0.9.nupkg.sha512"
+  ],
+  "logs": []
+}

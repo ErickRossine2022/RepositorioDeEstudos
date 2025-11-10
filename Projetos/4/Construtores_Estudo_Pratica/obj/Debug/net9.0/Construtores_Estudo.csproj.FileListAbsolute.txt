@@ -1,0 +1,14 @@
+/home/erickrossine/Documentos/C#/Construtores_Estudo/bin/Debug/net9.0/Construtores_Estudo
+/home/erickrossine/Documentos/C#/Construtores_Estudo/bin/Debug/net9.0/Construtores_Estudo.deps.json
+/home/erickrossine/Documentos/C#/Construtores_Estudo/bin/Debug/net9.0/Construtores_Estudo.runtimeconfig.json
+/home/erickrossine/Documentos/C#/Construtores_Estudo/bin/Debug/net9.0/Construtores_Estudo.dll
+/home/erickrossine/Documentos/C#/Construtores_Estudo/bin/Debug/net9.0/Construtores_Estudo.pdb
+/home/erickrossine/Documentos/C#/Construtores_Estudo/obj/Debug/net9.0/Construtores_Estudo.GeneratedMSBuildEditorConfig.editorconfig
+/home/erickrossine/Documentos/C#/Construtores_Estudo/obj/Debug/net9.0/Construtores_Estudo.AssemblyInfoInputs.cache
+/home/erickrossine/Documentos/C#/Construtores_Estudo/obj/Debug/net9.0/Construtores_Estudo.AssemblyInfo.cs
+/home/erickrossine/Documentos/C#/Construtores_Estudo/obj/Debug/net9.0/Construtores_Estudo.csproj.CoreCompileInputs.cache
+/home/erickrossine/Documentos/C#/Construtores_Estudo/obj/Debug/net9.0/Construtores_Estudo.dll
+/home/erickrossine/Documentos/C#/Construtores_Estudo/obj/Debug/net9.0/refint/Construtores_Estudo.dll
+/home/erickrossine/Documentos/C#/Construtores_Estudo/obj/Debug/net9.0/Construtores_Estudo.pdb
+/home/erickrossine/Documentos/C#/Construtores_Estudo/obj/Debug/net9.0/Construtores_Estudo.genruntimeconfig.cache
+/home/erickrossine/Documentos/C#/Construtores_Estudo/obj/Debug/net9.0/ref/Construtores_Estudo.dll

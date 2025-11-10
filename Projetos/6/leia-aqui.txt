@@ -1,0 +1,3 @@
+Este projeto de web scraping eu fiz a partir de uma sugestão que pedi a um programador sênior
+na área de C# .NET. Eu quase o concluí, mas, na metade do projeto, infelizmente tive que usar 
+IA para conseguir finalizar o desafio.

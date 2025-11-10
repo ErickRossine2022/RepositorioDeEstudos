@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "JpVOQM2Dtwg=",
+  "success": true,
+  "projectFilePath": "/home/erickrossine/Documentos/C#/web_scrapping/web_scrapping.csproj",
+  "expectedPackageFiles": [
+    "/home/erickrossine/.nuget/packages/htmlagilitypack/1.12.4/htmlagilitypack.1.12.4.nupkg.sha512",
+    "/home/erickrossine/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.20/microsoft.aspnetcore.app.ref.8.0.20.nupkg.sha512",
+    "/home/erickrossine/.nuget/packages/microsoft.netcore.app.host.linux-x64/8.0.20/microsoft.netcore.app.host.linux-x64.8.0.20.nupkg.sha512"
+  ],
+  "logs": []
+}

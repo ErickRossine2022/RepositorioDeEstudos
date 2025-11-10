@@ -1,0 +1,14 @@
+/home/erick/Documentos/C#/Exercicio2/Exercicio2/bin/Debug/net9.0/Exercicio2
+/home/erick/Documentos/C#/Exercicio2/Exercicio2/bin/Debug/net9.0/Exercicio2.deps.json
+/home/erick/Documentos/C#/Exercicio2/Exercicio2/bin/Debug/net9.0/Exercicio2.runtimeconfig.json
+/home/erick/Documentos/C#/Exercicio2/Exercicio2/bin/Debug/net9.0/Exercicio2.dll
+/home/erick/Documentos/C#/Exercicio2/Exercicio2/bin/Debug/net9.0/Exercicio2.pdb
+/home/erick/Documentos/C#/Exercicio2/Exercicio2/obj/Debug/net9.0/Exercicio2.GeneratedMSBuildEditorConfig.editorconfig
+/home/erick/Documentos/C#/Exercicio2/Exercicio2/obj/Debug/net9.0/Exercicio2.AssemblyInfoInputs.cache
+/home/erick/Documentos/C#/Exercicio2/Exercicio2/obj/Debug/net9.0/Exercicio2.AssemblyInfo.cs
+/home/erick/Documentos/C#/Exercicio2/Exercicio2/obj/Debug/net9.0/Exercicio2.csproj.CoreCompileInputs.cache
+/home/erick/Documentos/C#/Exercicio2/Exercicio2/obj/Debug/net9.0/Exercicio2.dll
+/home/erick/Documentos/C#/Exercicio2/Exercicio2/obj/Debug/net9.0/refint/Exercicio2.dll
+/home/erick/Documentos/C#/Exercicio2/Exercicio2/obj/Debug/net9.0/Exercicio2.pdb
+/home/erick/Documentos/C#/Exercicio2/Exercicio2/obj/Debug/net9.0/Exercicio2.genruntimeconfig.cache
+/home/erick/Documentos/C#/Exercicio2/Exercicio2/obj/Debug/net9.0/ref/Exercicio2.dll

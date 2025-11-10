@@ -1,0 +1,2 @@
+/home/erickrossine/Documentos/C#/Dotnet_Releases_Projetos/Controlador_DE_Alunos_Linux/Controle_de_Alunos.pdb
+/home/erickrossine/Documentos/C#/Dotnet_Releases_Projetos/Controlador_DE_Alunos_Linux/Controle_de_Alunos

@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v9.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v9.0": {
+      "Construtores_Estudo/1.0.0": {
+        "runtime": {
+          "Construtores_Estudo.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Construtores_Estudo/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
