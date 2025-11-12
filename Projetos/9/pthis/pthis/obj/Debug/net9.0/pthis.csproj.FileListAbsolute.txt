@@ -1,0 +1,14 @@
+/home/erickrossine/Documentos/C#/pthis/pthis/bin/Debug/net9.0/pthis
+/home/erickrossine/Documentos/C#/pthis/pthis/bin/Debug/net9.0/pthis.deps.json
+/home/erickrossine/Documentos/C#/pthis/pthis/bin/Debug/net9.0/pthis.runtimeconfig.json
+/home/erickrossine/Documentos/C#/pthis/pthis/bin/Debug/net9.0/pthis.dll
+/home/erickrossine/Documentos/C#/pthis/pthis/bin/Debug/net9.0/pthis.pdb
+/home/erickrossine/Documentos/C#/pthis/pthis/obj/Debug/net9.0/pthis.GeneratedMSBuildEditorConfig.editorconfig
+/home/erickrossine/Documentos/C#/pthis/pthis/obj/Debug/net9.0/pthis.AssemblyInfoInputs.cache
+/home/erickrossine/Documentos/C#/pthis/pthis/obj/Debug/net9.0/pthis.AssemblyInfo.cs
+/home/erickrossine/Documentos/C#/pthis/pthis/obj/Debug/net9.0/pthis.csproj.CoreCompileInputs.cache
+/home/erickrossine/Documentos/C#/pthis/pthis/obj/Debug/net9.0/pthis.dll
+/home/erickrossine/Documentos/C#/pthis/pthis/obj/Debug/net9.0/refint/pthis.dll
+/home/erickrossine/Documentos/C#/pthis/pthis/obj/Debug/net9.0/pthis.pdb
+/home/erickrossine/Documentos/C#/pthis/pthis/obj/Debug/net9.0/pthis.genruntimeconfig.cache
+/home/erickrossine/Documentos/C#/pthis/pthis/obj/Debug/net9.0/ref/pthis.dll

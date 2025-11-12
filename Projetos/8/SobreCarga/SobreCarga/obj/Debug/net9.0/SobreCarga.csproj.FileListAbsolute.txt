@@ -1,0 +1,14 @@
+/home/erickrossine/Documentos/C#/SobreCarga/SobreCarga/bin/Debug/net9.0/SobreCarga
+/home/erickrossine/Documentos/C#/SobreCarga/SobreCarga/bin/Debug/net9.0/SobreCarga.deps.json
+/home/erickrossine/Documentos/C#/SobreCarga/SobreCarga/bin/Debug/net9.0/SobreCarga.runtimeconfig.json
+/home/erickrossine/Documentos/C#/SobreCarga/SobreCarga/bin/Debug/net9.0/SobreCarga.dll
+/home/erickrossine/Documentos/C#/SobreCarga/SobreCarga/bin/Debug/net9.0/SobreCarga.pdb
+/home/erickrossine/Documentos/C#/SobreCarga/SobreCarga/obj/Debug/net9.0/SobreCarga.GeneratedMSBuildEditorConfig.editorconfig
+/home/erickrossine/Documentos/C#/SobreCarga/SobreCarga/obj/Debug/net9.0/SobreCarga.AssemblyInfoInputs.cache
+/home/erickrossine/Documentos/C#/SobreCarga/SobreCarga/obj/Debug/net9.0/SobreCarga.AssemblyInfo.cs
+/home/erickrossine/Documentos/C#/SobreCarga/SobreCarga/obj/Debug/net9.0/SobreCarga.csproj.CoreCompileInputs.cache
+/home/erickrossine/Documentos/C#/SobreCarga/SobreCarga/obj/Debug/net9.0/SobreCarga.dll
+/home/erickrossine/Documentos/C#/SobreCarga/SobreCarga/obj/Debug/net9.0/refint/SobreCarga.dll
+/home/erickrossine/Documentos/C#/SobreCarga/SobreCarga/obj/Debug/net9.0/SobreCarga.pdb
+/home/erickrossine/Documentos/C#/SobreCarga/SobreCarga/obj/Debug/net9.0/SobreCarga.genruntimeconfig.cache
+/home/erickrossine/Documentos/C#/SobreCarga/SobreCarga/obj/Debug/net9.0/ref/SobreCarga.dll
