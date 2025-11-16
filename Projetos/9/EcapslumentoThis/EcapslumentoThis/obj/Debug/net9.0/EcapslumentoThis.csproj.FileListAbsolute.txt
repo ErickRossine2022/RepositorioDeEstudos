@@ -1,0 +1,14 @@
+/home/erickrossine/Documentos/C#/EcapslumentoThis/EcapslumentoThis/obj/Debug/net9.0/EcapslumentoThis.GeneratedMSBuildEditorConfig.editorconfig
+/home/erickrossine/Documentos/C#/EcapslumentoThis/EcapslumentoThis/obj/Debug/net9.0/EcapslumentoThis.AssemblyInfoInputs.cache
+/home/erickrossine/Documentos/C#/EcapslumentoThis/EcapslumentoThis/obj/Debug/net9.0/EcapslumentoThis.AssemblyInfo.cs
+/home/erickrossine/Documentos/C#/EcapslumentoThis/EcapslumentoThis/obj/Debug/net9.0/EcapslumentoThis.csproj.CoreCompileInputs.cache
+/home/erickrossine/Documentos/C#/EcapslumentoThis/EcapslumentoThis/bin/Debug/net9.0/EcapslumentoThis
+/home/erickrossine/Documentos/C#/EcapslumentoThis/EcapslumentoThis/bin/Debug/net9.0/EcapslumentoThis.deps.json
+/home/erickrossine/Documentos/C#/EcapslumentoThis/EcapslumentoThis/bin/Debug/net9.0/EcapslumentoThis.runtimeconfig.json
+/home/erickrossine/Documentos/C#/EcapslumentoThis/EcapslumentoThis/bin/Debug/net9.0/EcapslumentoThis.dll
+/home/erickrossine/Documentos/C#/EcapslumentoThis/EcapslumentoThis/bin/Debug/net9.0/EcapslumentoThis.pdb
+/home/erickrossine/Documentos/C#/EcapslumentoThis/EcapslumentoThis/obj/Debug/net9.0/EcapslumentoThis.dll
+/home/erickrossine/Documentos/C#/EcapslumentoThis/EcapslumentoThis/obj/Debug/net9.0/refint/EcapslumentoThis.dll
+/home/erickrossine/Documentos/C#/EcapslumentoThis/EcapslumentoThis/obj/Debug/net9.0/EcapslumentoThis.pdb
+/home/erickrossine/Documentos/C#/EcapslumentoThis/EcapslumentoThis/obj/Debug/net9.0/EcapslumentoThis.genruntimeconfig.cache
+/home/erickrossine/Documentos/C#/EcapslumentoThis/EcapslumentoThis/obj/Debug/net9.0/ref/EcapslumentoThis.dll

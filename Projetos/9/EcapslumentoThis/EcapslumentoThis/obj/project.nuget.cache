@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "RsUbw9lSLns=",
+  "success": true,
+  "projectFilePath": "/home/erickrossine/Documentos/C#/EcapslumentoThis/EcapslumentoThis/EcapslumentoThis.csproj",
+  "expectedPackageFiles": [
+    "/home/erickrossine/.nuget/packages/microsoft.aspnetcore.app.ref/9.0.9/microsoft.aspnetcore.app.ref.9.0.9.nupkg.sha512"
+  ],
+  "logs": []
+}
