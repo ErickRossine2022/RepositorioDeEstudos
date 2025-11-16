@@ -467,4 +467,4 @@ Use classes para objetos complexos e structs para dados leves.
 ---
 
 ✍️ **Autor:** Erick Rossine *(Blank1ll The Dev)*  
-📅 **Estudo sobre:** Palavra `this` e Sobrecarga em C#
+📅 **Estudo sobre:** C#
