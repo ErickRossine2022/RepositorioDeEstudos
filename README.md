@@ -16,6 +16,7 @@ Este repositório contém **exercícios e práticas de estudo em C#**, voltados 
 3. [🛠️ Ferramentas Recomendadas](#️-ferramentas-recomendadas)
 4. [🙏 Agradecimento](#-agradecimento)
 5. [📗 Palavra `this` e Sobrecarga (Overloading)](#-documentação-sobre-a-palavra-this-e-sobrecarga)
+6. [💯 Diferença entre Classe e Struct](#diferença-entre-classe-e-struct-em-c)
 
 ---
 
