@@ -1,0 +1,14 @@
+/home/erickrossine/Documentos/C#/TiposValorEreferencia/TiposValorEreferencia/obj/Debug/net9.0/TiposValorEreferencia.GeneratedMSBuildEditorConfig.editorconfig
+/home/erickrossine/Documentos/C#/TiposValorEreferencia/TiposValorEreferencia/obj/Debug/net9.0/TiposValorEreferencia.AssemblyInfoInputs.cache
+/home/erickrossine/Documentos/C#/TiposValorEreferencia/TiposValorEreferencia/obj/Debug/net9.0/TiposValorEreferencia.AssemblyInfo.cs
+/home/erickrossine/Documentos/C#/TiposValorEreferencia/TiposValorEreferencia/obj/Debug/net9.0/TiposValorEreferencia.csproj.CoreCompileInputs.cache
+/home/erickrossine/Documentos/C#/TiposValorEreferencia/TiposValorEreferencia/bin/Debug/net9.0/TiposValorEreferencia
+/home/erickrossine/Documentos/C#/TiposValorEreferencia/TiposValorEreferencia/bin/Debug/net9.0/TiposValorEreferencia.deps.json
+/home/erickrossine/Documentos/C#/TiposValorEreferencia/TiposValorEreferencia/bin/Debug/net9.0/TiposValorEreferencia.runtimeconfig.json
+/home/erickrossine/Documentos/C#/TiposValorEreferencia/TiposValorEreferencia/bin/Debug/net9.0/TiposValorEreferencia.dll
+/home/erickrossine/Documentos/C#/TiposValorEreferencia/TiposValorEreferencia/bin/Debug/net9.0/TiposValorEreferencia.pdb
+/home/erickrossine/Documentos/C#/TiposValorEreferencia/TiposValorEreferencia/obj/Debug/net9.0/TiposValorEreferencia.dll
+/home/erickrossine/Documentos/C#/TiposValorEreferencia/TiposValorEreferencia/obj/Debug/net9.0/refint/TiposValorEreferencia.dll
+/home/erickrossine/Documentos/C#/TiposValorEreferencia/TiposValorEreferencia/obj/Debug/net9.0/TiposValorEreferencia.pdb
+/home/erickrossine/Documentos/C#/TiposValorEreferencia/TiposValorEreferencia/obj/Debug/net9.0/TiposValorEreferencia.genruntimeconfig.cache
+/home/erickrossine/Documentos/C#/TiposValorEreferencia/TiposValorEreferencia/obj/Debug/net9.0/ref/TiposValorEreferencia.dll
