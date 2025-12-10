@@ -23,8 +23,9 @@ Repositório dedicado ao **aprendizado prático em C#**, com foco em **Programa�
    - [Modificador `params` e Tuplas](#️-modificador-params-e-tuplas)
 
 3. **[Estrutura do Repositório](#-estrutura-do-repositório)**
-4. **[Ferramentas Recomendadas](#️-ferramentas-recomendadas)**
-5. **[Sobre o Autor](#-sobre-o-autor)**
+4. **[Dicas de Projeto e Estrutura](#-dicas-de-projeto-e-estrutura)**
+5. **[Ferramentas Recomendadas](#️-ferramentas-recomendadas)**
+6. **[Sobre o Autor](#-sobre-o-autor)**
 
 ---
 
@@ -1018,9 +1019,500 @@ RepositorioDeEstudos/
 │   ├── Conta_Bancaria/
 │   ├── SobreCarga/
 │   └── EcapslumentoThis/
+├── Dicas/               # Dicas, padrões e estruturas de projetos
+│   └── EstruturaProjeto/  # Estrutura padrão profissional de projetos .NET
 ├── README.md            # Este arquivo
 └── Documentação.md      # Documentação adicional
 ```
+
+---
+
+## 💡 Dicas de Projeto e Estrutura
+
+### 🏗️ Como Estruturar um Projeto .NET/C#
+
+Se você está começando um novo projeto e quer saber **como organizar o código**, temos um guia completo na pasta `Dicas/EstruturaProjeto/`.
+
+#### ⚡ Resumo Rápido
+
+Um projeto profissional em C# segue a **Clean Architecture** com 4 camadas principais:
+
+```
+┌─────────────────────────────────┐
+│   Presentation (API/Web)        │  ← Controllers, endpoints
+├─────────────────────────────────┤
+│   Application (Orquestração)    │  ← Services, DTOs
+├─────────────────────────────────┤
+│   Domain (Lógica de Negócio)    │  ← Entidades, Interfaces
+├─────────────────────────────────┤
+│   Infrastructure (Persistência) │  ← Banco, Repositórios
+└─────────────────────────────────┘
+```
+
+#### 📚 O que cada camada faz?
+
+| Camada | Responsabilidade | Exemplo |
+|---|---|---|
+| **Domain** | Lógica pura de negócio | `User.IsValid()` |
+| **Application** | Coordena fluxos | `UserService.CreateUserAsync()` |
+| **Infrastructure** | Persistência e dados | `UserRepository.AddAsync()` |
+| **Presentation** | Interface com usuário | `UserController` (API) |
+
+#### 🔗 Fluxo de uma Requisição
+
+```
+Cliente HTTP
+    ↓
+[Controller] ← POST /users (CreateUserDto)
+    ↓
+[Service] ← Valida e coordena
+    ↓
+[Repository] ← Persiste no banco
+    ↓
+[Database] ← INSERT
+    ↓
+[Response] → JSON ao cliente
+```
+
+---
+
+### 📁 Explicação Detalhada de Cada Pasta
+
+#### 🔴 **src/** - Código-Fonte Principal
+
+A pasta `src/` contém **todo o código de produção** da sua aplicação. É aqui que você coloca as 4 camadas da arquitetura.
+
+```
+src/
+├── Domain/              # Coração da aplicação
+├── Application/         # Orquestração de negócio
+├── Infrastructure/      # Acesso a dados
+└── Presentation/        # Interface com usuário
+```
+
+---
+
+#### 🎯 **src/Domain/** - Núcleo de Negócio
+
+**Para quê serve?** Aqui fica a **lógica pura de negócio**, independente de banco de dados, web frameworks ou qualquer coisa técnica.
+
+**O que vai aqui:**
+- ✔ **Models** - Entidades de domínio (User, Product, Order)
+- ✔ **Interfaces** - Contratos que outras camadas implementam
+- ✔ Validações de negócio
+- ✔ Enums e tipos de valor
+
+**Exemplo:**
+
+```csharp
+// src/Domain/Models/User.cs
+public class User
+{
+    public int Id { get; set; }
+    public string Name { get; set; }
+    public string Email { get; set; }
+    
+    // Validação de domínio - regra de negócio pura
+    public bool IsValid()
+    {
+        return !string.IsNullOrEmpty(Name) && 
+               !string.IsNullOrEmpty(Email) && 
+               Email.Contains("@");
+    }
+}
+```
+
+**Por que separar?**
+- Domain **não depende de nada** → Pode ser testado facilmente
+- Se mudar o banco de dados, Domain não é afetado
+- Reutilizável em diferentes contextos (Web API, Console, Desktop)
+
+---
+
+#### 📋 **src/Domain/Models/** - Entidades
+
+**Para quê serve?** Armazena as **classes que representam conceitos do seu negócio**.
+
+**Exemplo de pastas:**
+
+```
+src/Domain/Models/
+├── User.cs           # Usuário do sistema
+├── Product.cs        # Produto à venda
+├── Order.cs          # Pedido de compra
+└── Payment.cs        # Pagamento
+```
+
+Cada arquivo `Models/XYZ.cs` representa uma **entidade importante** do seu domínio.
+
+---
+
+#### 🔗 **src/Domain/Interfaces/** - Contratos
+
+**Para quê serve?** Define **interfaces** que serão implementadas por outras camadas (sem criar dependência).
+
+**Exemplo:**
+
+```csharp
+// src/Domain/Interfaces/IUserRepository.cs
+public interface IUserRepository
+{
+    Task<User> GetByIdAsync(int id);
+    Task AddAsync(User user);
+    Task UpdateAsync(User user);
+}
+```
+
+**Por que usar interfaces?**
+- Desacopla as camadas
+- Facilita testes (pode mockar a interface)
+- Permite trocar a implementação sem mexer em Domain
+
+---
+
+#### 🟡 **src/Application/** - Orquestração de Negócio
+
+**Para quê serve?** Coordena entre Domain e Infrastructure. É aqui que você coloca a **lógica de fluxo da aplicação**.
+
+```
+src/Application/
+├── Services/         # Lógica de casos de uso
+└── DTOs/            # Transferência de dados entre camadas
+```
+
+**Exemplo de fluxo:**
+
+```csharp
+// src/Application/Services/UserService.cs
+public class UserService
+{
+    private readonly IUserRepository _repo;
+    
+    public async Task<UserResponseDto> CreateUserAsync(CreateUserDto dto)
+    {
+        // 1. Validar dados
+        if (string.IsNullOrEmpty(dto.Email))
+            throw new ArgumentException("Email obrigatório");
+        
+        // 2. Criar entidade de domínio
+        var user = new User { Name = dto.Name, Email = dto.Email };
+        
+        // 3. Validar regras de negócio
+        if (!user.IsValid())
+            throw new InvalidOperationException("Usuário inválido");
+        
+        // 4. Persistir (Infrastructure)
+        await _repo.AddAsync(user);
+        
+        // 5. Retornar DTO para apresentação
+        return new UserResponseDto { Id = user.Id, Name = user.Name };
+    }
+}
+```
+
+---
+
+#### 📤 **src/Application/Services/** - Casos de Uso
+
+**Para quê serve?** Aqui você implementa a **lógica de cada funcionalidade**.
+
+```
+src/Application/Services/
+├── UserService.cs          # Criar, buscar, atualizar usuários
+├── ProductService.cs       # Gerenciar produtos
+├── OrderService.cs         # Processar pedidos
+└── PaymentService.cs       # Processar pagamentos
+```
+
+**Responsabilidades:**
+- ✔ Orquestrar chamadas entre Domain e Infrastructure
+- ✔ Validar dados de entrada
+- ✔ Converter DTOs em entidades de domínio
+- ✔ Implementar lógica de negócio complexa
+
+---
+
+#### 📦 **src/Application/DTOs/** - Transferência de Dados
+
+**Para quê serve?** Define as **estruturas de dados** que trafegam entre camadas, sem expor as entidades de domínio.
+
+```csharp
+// src/Application/DTOs/UserDto.cs
+
+// Input - o que a API recebe
+public class CreateUserDto
+{
+    public string Name { get; set; }
+    public string Email { get; set; }
+    public string Password { get; set; }
+}
+
+// Output - o que a API retorna
+public class UserResponseDto
+{
+    public int Id { get; set; }
+    public string Name { get; set; }
+    public string Email { get; set; }
+    public DateTime CreatedAt { get; set; }
+}
+```
+
+**Por que usar DTOs?**
+- Não expõe a entidade de domínio (segurança)
+- Diferencia dados de entrada (create) de saída (response)
+- Permite serializar/desserializar corretamente
+
+---
+
+#### 🟢 **src/Infrastructure/** - Implementação Técnica
+
+**Para quê serve?** Implementa os detalhes técnicos: banco de dados, APIs externas, arquivos, cache, etc.
+
+```
+src/Infrastructure/
+├── Data/               # Configuração de banco de dados
+└── Repositories/       # Implementação do padrão Repository
+```
+
+---
+
+#### 💾 **src/Infrastructure/Data/** - Persistência
+
+**Para quê serve?** Configurar **como os dados são armazenados** (SQL, NoSQL, arquivos, etc).
+
+```csharp
+// src/Infrastructure/Data/AppDbContext.cs
+public class AppDbContext : DbContext
+{
+    public DbSet<User> Users { get; set; }
+    public DbSet<Product> Products { get; set; }
+    
+    protected override void OnConfiguring(DbContextOptionsBuilder options)
+    {
+        options.UseSqlServer("connection-string");
+    }
+}
+```
+
+**Aqui você coloca:**
+- ✔ Entity Framework DbContext
+- ✔ Migrations (versionamento de schema)
+- ✔ Configurações de banco
+
+---
+
+#### 📚 **src/Infrastructure/Repositories/** - Acesso a Dados
+
+**Para quê serve?** Implementar a interface de repositório definida em Domain, **isolando a lógica de persistência**.
+
+```csharp
+// src/Infrastructure/Repositories/UserRepository.cs
+public class UserRepository : IUserRepository
+{
+    private readonly AppDbContext _context;
+    
+    public UserRepository(AppDbContext context)
+    {
+        _context = context;
+    }
+    
+    public async Task<User> GetByIdAsync(int id)
+    {
+        return await _context.Users.FindAsync(id);
+    }
+    
+    public async Task AddAsync(User user)
+    {
+        _context.Users.Add(user);
+        await _context.SaveChangesAsync();
+    }
+}
+```
+
+**Vantagem:**
+- Se trocar de SQL para MongoDB, **apenas este arquivo muda**
+- Domain continua igual
+- Application continua igual
+- Apenas a implementação técnica muda
+
+---
+
+#### 🔵 **src/Presentation/** - Interface com Usuário
+
+**Para quê serve?** Receber requisições HTTP (ou UI Desktop) e delegá-las para Application.
+
+```
+src/Presentation/
+└── Controllers/        # Endpoints da API REST
+```
+
+---
+
+#### 🎮 **src/Presentation/Controllers/** - Endpoints da API
+
+**Para quê serve?** Definir os **endpoints HTTP** que o cliente consome.
+
+```csharp
+// src/Presentation/Controllers/UserController.cs
+[ApiController]
+[Route("api/[controller]")]
+public class UserController
+{
+    private readonly UserService _userService;
+    
+    public UserController(UserService userService)
+    {
+        _userService = userService;
+    }
+    
+    [HttpPost]
+    public async Task<IActionResult> Create([FromBody] CreateUserDto dto)
+    {
+        try
+        {
+            var result = await _userService.CreateUserAsync(dto);
+            return CreatedAtAction(nameof(GetById), new { id = result.Id }, result);
+        }
+        catch (ArgumentException ex)
+        {
+            return BadRequest(ex.Message);
+        }
+    }
+    
+    [HttpGet("{id}")]
+    public async Task<IActionResult> GetById(int id)
+    {
+        var result = await _userService.GetUserAsync(id);
+        return Ok(result);
+    }
+}
+```
+
+**Responsabilidades:**
+- ✔ Receber requisições HTTP
+- ✔ Validar formato (JSON, headers)
+- ✔ Chamar Services
+- ✔ Retornar respostas HTTP corretas
+
+---
+
+#### 🧪 **tests/** - Testes Automatizados
+
+**Para quê serve?** Garantir que o código funciona corretamente.
+
+```
+tests/
+├── Unit/               # Testa partes isoladas
+└── Integration/        # Testa fluxos completos
+```
+
+---
+
+#### ✅ **tests/Unit/** - Testes Unitários
+
+**Para quê serve?** Testar **uma única classe ou método** isoladamente, sem dependências externas.
+
+```csharp
+// tests/Unit/UserServiceTests.cs
+public class UserServiceTests
+{
+    [Fact]
+    public async Task CreateUser_WithValidData_ReturnsUserDto()
+    {
+        // Arrange - preparar
+        var mockRepository = new Mock<IUserRepository>();
+        var service = new UserService(mockRepository.Object);
+        var dto = new CreateUserDto 
+        { 
+            Name = "João", 
+            Email = "joao@example.com", 
+            Password = "123456" 
+        };
+
+        // Act - executar
+        var result = await service.CreateUserAsync(dto);
+
+        // Assert - verificar
+        Assert.NotNull(result);
+        Assert.Equal("João", result.Name);
+    }
+}
+```
+
+**Características:**
+- ✔ Testa lógica de uma classe
+- ✔ Usa Mocks para isolar dependências
+- ✔ Rápido de executar
+- ✔ Deve passar 100% das vezes
+
+---
+
+#### 🔗 **tests/Integration/** - Testes de Integração
+
+**Para quê serve?** Testar **fluxos completos**, com banco de dados real, API real, etc.
+
+```csharp
+// tests/Integration/UserControllerTests.cs
+public class UserControllerIntegrationTests
+{
+    [Fact]
+    public async Task CreateUser_WithRealDatabase_SavesUser()
+    {
+        // Arrange - criar banco de dados em memória
+        var options = new DbContextOptionsBuilder<AppDbContext>()
+            .UseInMemoryDatabase("test-db")
+            .Options;
+        
+        using (var context = new AppDbContext(options))
+        {
+            var repository = new UserRepository(context);
+            var service = new UserService(repository);
+            var controller = new UserController(service);
+            
+            // Act - enviar requisição
+            var result = await controller.Create(new CreateUserDto
+            {
+                Name = "João",
+                Email = "joao@example.com",
+                Password = "123456"
+            });
+            
+            // Assert - verificar se foi salvo no banco
+            var savedUser = await context.Users.FirstOrDefaultAsync(u => u.Email == "joao@example.com");
+            Assert.NotNull(savedUser);
+            Assert.Equal("João", savedUser.Name);
+        }
+    }
+}
+```
+
+---
+
+#### 📖 Exemplo Prático
+
+Na pasta `Dicas/EstruturaProjeto/` você encontra:
+
+- **Arquivos de exemplo** em cada camada:
+  - `src/Domain/Models/User.cs` - Entidade
+  - `src/Application/Services/UserService.cs` - Service
+  - `src/Infrastructure/Repositories/UserRepository.cs` - Repository
+  - `src/Presentation/Controllers/UserController.cs` - API
+  - `tests/Unit/UserServiceTests.cs` - Testes
+
+- **README.md completo** explicando:
+  - O que é cada camada
+  - Por que separar responsabilidades
+  - Padrões de design (Repository, Dependency Injection)
+  - Boas práticas
+
+#### 🚀 Próximas Vezes que Criar um Projeto
+
+1. Crie a estrutura de pastas (veja a pasta `Dicas/EstruturaProjeto/`)
+2. Comece pela camada **Domain** (entidades e interfaces)
+3. Implemente a camada **Infrastructure** (repositories)
+4. Crie a camada **Application** (services)
+5. Finalize com a camada **Presentation** (controllers)
+6. Adicione testes na pasta `tests/`
 
 ---
 
