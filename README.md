@@ -21,6 +21,8 @@ Repositório dedicado ao **aprendizado prático em C#**, com foco em **Programa�
    - [Tipos Valor e Referência](#-tipos-valor-vs-tipos-referência)
    - [Garbage Collector](#-garbage-collector)
    - [Modificador `params` e Tuplas](#️-modificador-params-e-tuplas)
+    - [Modificadores `ref` e `out`](#modificadores-ref-e-out)
+    - [Boxing e Unboxing](#boxing-e-unboxing)
 
 3. **[Estrutura do Repositório](#-estrutura-do-repositório)**
 4. **[Dicas de Projeto e Estrutura](#-dicas-de-projeto-e-estrutura)**
@@ -1001,6 +1003,101 @@ if (PasswordHelper.VerificarPassword(usuarioArmazenado.Password, senhaEntrada))
 | **Combinação** | `params` com tuplas | Registrar/processar múltiplos registros |
 
 ---
+
+### 🔹 Modificadores `ref` e `out`
+
+Os modificadores `ref` e `out` permitem passar argumentos por **referência** para um método — ou seja, o método recebe acesso direto à variável original, não a uma cópia.
+
+Principais diferenças e regras:
+- **`ref`**: a variável passada precisa estar **inicializada** antes da chamada. O método pode ler e escrever o valor.
+- **`out`**: a variável **não precisa** estar inicializada antes da chamada, mas **obrigatoriamente** deve ser atribuída dentro do método antes de retornar.
+- Ambos são usados para evitar cópias (útil para structs grandes) ou para retornar múltiplos valores sem usar tuplas/objetos.
+- Só pode haver **um `ref` ou `out` por parâmetro**, e eles devem aparecer na assinatura do método.
+
+Exemplo prático — `ref` (swap):
+
+```csharp
+public static void Swap(ref int a, ref int b)
+{
+    int temp = a;
+    a = b;
+    b = temp;
+}
+
+int x = 5;
+int y = 10;
+Swap(ref x, ref y);
+// x == 10, y == 5
+```
+
+Exemplo prático — `out` (retornar múltiplos resultados):
+
+```csharp
+public static bool TryParseInt(string s, out int value)
+{
+    return int.TryParse(s, out value);
+}
+
+if (TryParseInt("123", out int result))
+{
+    Console.WriteLine(result); // 123
+}
+```
+
+Boas práticas e observações:
+- Prefira `out` para métodos do tipo `TryXxx` (padrão do BCL) quando quiser sinalizar sucesso/falha e retornar um valor.
+- Use `ref` quando o método deve tanto ler quanto escrever o valor e a variável já possui um valor válido.
+- Desde C# 7, é possível declarar variáveis `out` inline: `if (int.TryParse(s, out var n))`.
+- Para evitar efeitos colaterais difíceis de testar, prefira retornar tuplas ou DTOs quando fizer sentido em APIs públicas; `ref`/`out` são úteis em código de baixo nível ou para otimizações.
+
+
+### 🔹 Boxing e Unboxing
+
+`Boxing` e `Unboxing` são conceitos ligados à diferença entre **tipos por valor** (value types — ex: `int`, `struct`) e **tipos por referência** (reference types — ex: `object`, classes).
+
+- **Boxing**: é a conversão implícita de um value type para `object` (ou para uma interface que ele implementa). Isso copia o valor para o heap e cria um objeto.
+- **Unboxing**: é a conversão explícita do `object` de volta para um value type. Requer um cast e pode lançar `InvalidCastException` se o tipo não corresponder.
+
+Exemplo simples:
+
+```csharp
+int a = 123;         // value type, armazenado na stack
+object o = a;        // boxing: o agora referencia um objeto no heap
+int b = (int)o;      // unboxing: cast explícito
+```
+
+Impactos e desempenho:
+- Boxing aloca memória no heap e envolve custo de gerenciamento, GC e cópia de dados.
+- Unboxing faz um cast e leitura do valor; também tem custo e risco de exceção se o tipo não bater.
+- Operações frequentes de boxing/unboxing em loops podem degradar significativamente a performance.
+
+Como evitar:
+- Use **generics** para manter tipos fortes sem boxing: `List<int>` evita boxing vs `ArrayList`.
+- Evite armazenar value types em coleções não genéricas (`ArrayList`, `List<object>`) quando possível.
+- Para structs grandes, considere passar por referência (`in` / `ref`) para evitar cópias, mas cuidado com semântica.
+
+Observação sobre `Nullable<T>`:
+- Ao fazer boxing de um `Nullable<T>` que tem valor (`HasValue == true`), o valor subjacente é boxed (ex.: `int? x = 5; object o = x;` resulta em um boxed `int`). Se `x` for `null`, o resultado do boxing é `null`.
+
+Exemplo prático mostrando problema comum:
+
+```csharp
+object sum = 0; // boxed int (0)
+for (int i = 0; i < 10000; i++)
+{
+    // cada operação pode causar boxing/unboxing se não usar tipos genéricos
+    sum = (int)sum + i; // unboxing + soma + boxing novamente
+}
+```
+
+Alternativas sem boxing:
+- Usar `int`/`long` nativos e coleções genéricas (`List<int>`).
+- Usar `Span<T>` e `Memory<T>` para trabalhar com buffers sem alocações quando apropriado.
+
+Resumo rápido:
+- **Boxing**: value type -> object (alocação no heap, custo)
+- **Unboxing**: object -> value type (cast explícito, pode lançar)
+- **Evitar** quando performance/GC for crítica; prefira generics e passagem por referência quando adequado.
 
 
 ## 📁 Estrutura do Repositório
