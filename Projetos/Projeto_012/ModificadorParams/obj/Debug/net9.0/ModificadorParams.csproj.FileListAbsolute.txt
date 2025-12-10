@@ -1,0 +1,14 @@
+/home/erickrossine/Documentos/C#/ModificadorParams/ModificadorParams/bin/Debug/net9.0/ModificadorParams
+/home/erickrossine/Documentos/C#/ModificadorParams/ModificadorParams/bin/Debug/net9.0/ModificadorParams.deps.json
+/home/erickrossine/Documentos/C#/ModificadorParams/ModificadorParams/bin/Debug/net9.0/ModificadorParams.runtimeconfig.json
+/home/erickrossine/Documentos/C#/ModificadorParams/ModificadorParams/bin/Debug/net9.0/ModificadorParams.dll
+/home/erickrossine/Documentos/C#/ModificadorParams/ModificadorParams/bin/Debug/net9.0/ModificadorParams.pdb
+/home/erickrossine/Documentos/C#/ModificadorParams/ModificadorParams/obj/Debug/net9.0/ModificadorParams.GeneratedMSBuildEditorConfig.editorconfig
+/home/erickrossine/Documentos/C#/ModificadorParams/ModificadorParams/obj/Debug/net9.0/ModificadorParams.AssemblyInfoInputs.cache
+/home/erickrossine/Documentos/C#/ModificadorParams/ModificadorParams/obj/Debug/net9.0/ModificadorParams.AssemblyInfo.cs
+/home/erickrossine/Documentos/C#/ModificadorParams/ModificadorParams/obj/Debug/net9.0/ModificadorParams.csproj.CoreCompileInputs.cache
+/home/erickrossine/Documentos/C#/ModificadorParams/ModificadorParams/obj/Debug/net9.0/ModificadorParams.dll
+/home/erickrossine/Documentos/C#/ModificadorParams/ModificadorParams/obj/Debug/net9.0/refint/ModificadorParams.dll
+/home/erickrossine/Documentos/C#/ModificadorParams/ModificadorParams/obj/Debug/net9.0/ModificadorParams.pdb
+/home/erickrossine/Documentos/C#/ModificadorParams/ModificadorParams/obj/Debug/net9.0/ModificadorParams.genruntimeconfig.cache
+/home/erickrossine/Documentos/C#/ModificadorParams/ModificadorParams/obj/Debug/net9.0/ref/ModificadorParams.dll

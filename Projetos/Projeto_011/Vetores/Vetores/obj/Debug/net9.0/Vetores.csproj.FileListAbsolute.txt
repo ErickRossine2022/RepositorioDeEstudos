@@ -1,0 +1,14 @@
+/home/erickrossine/Documentos/C#/Vetores/Vetores/bin/Debug/net9.0/Vetores
+/home/erickrossine/Documentos/C#/Vetores/Vetores/bin/Debug/net9.0/Vetores.deps.json
+/home/erickrossine/Documentos/C#/Vetores/Vetores/bin/Debug/net9.0/Vetores.runtimeconfig.json
+/home/erickrossine/Documentos/C#/Vetores/Vetores/bin/Debug/net9.0/Vetores.dll
+/home/erickrossine/Documentos/C#/Vetores/Vetores/bin/Debug/net9.0/Vetores.pdb
+/home/erickrossine/Documentos/C#/Vetores/Vetores/obj/Debug/net9.0/Vetores.GeneratedMSBuildEditorConfig.editorconfig
+/home/erickrossine/Documentos/C#/Vetores/Vetores/obj/Debug/net9.0/Vetores.AssemblyInfoInputs.cache
+/home/erickrossine/Documentos/C#/Vetores/Vetores/obj/Debug/net9.0/Vetores.AssemblyInfo.cs
+/home/erickrossine/Documentos/C#/Vetores/Vetores/obj/Debug/net9.0/Vetores.csproj.CoreCompileInputs.cache
+/home/erickrossine/Documentos/C#/Vetores/Vetores/obj/Debug/net9.0/Vetores.dll
+/home/erickrossine/Documentos/C#/Vetores/Vetores/obj/Debug/net9.0/refint/Vetores.dll
+/home/erickrossine/Documentos/C#/Vetores/Vetores/obj/Debug/net9.0/Vetores.pdb
+/home/erickrossine/Documentos/C#/Vetores/Vetores/obj/Debug/net9.0/Vetores.genruntimeconfig.cache
+/home/erickrossine/Documentos/C#/Vetores/Vetores/obj/Debug/net9.0/ref/Vetores.dll

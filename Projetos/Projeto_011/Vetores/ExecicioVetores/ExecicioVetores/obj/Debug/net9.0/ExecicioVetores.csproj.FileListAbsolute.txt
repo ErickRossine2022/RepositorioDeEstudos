@@ -1,0 +1,14 @@
+/home/erickrossine/Documentos/C#/Vetores/ExecicioVetores/ExecicioVetores/bin/Debug/net9.0/ExecicioVetores
+/home/erickrossine/Documentos/C#/Vetores/ExecicioVetores/ExecicioVetores/bin/Debug/net9.0/ExecicioVetores.deps.json
+/home/erickrossine/Documentos/C#/Vetores/ExecicioVetores/ExecicioVetores/bin/Debug/net9.0/ExecicioVetores.runtimeconfig.json
+/home/erickrossine/Documentos/C#/Vetores/ExecicioVetores/ExecicioVetores/bin/Debug/net9.0/ExecicioVetores.dll
+/home/erickrossine/Documentos/C#/Vetores/ExecicioVetores/ExecicioVetores/bin/Debug/net9.0/ExecicioVetores.pdb
+/home/erickrossine/Documentos/C#/Vetores/ExecicioVetores/ExecicioVetores/obj/Debug/net9.0/ExecicioVetores.GeneratedMSBuildEditorConfig.editorconfig
+/home/erickrossine/Documentos/C#/Vetores/ExecicioVetores/ExecicioVetores/obj/Debug/net9.0/ExecicioVetores.AssemblyInfoInputs.cache
+/home/erickrossine/Documentos/C#/Vetores/ExecicioVetores/ExecicioVetores/obj/Debug/net9.0/ExecicioVetores.AssemblyInfo.cs
+/home/erickrossine/Documentos/C#/Vetores/ExecicioVetores/ExecicioVetores/obj/Debug/net9.0/ExecicioVetores.csproj.CoreCompileInputs.cache
+/home/erickrossine/Documentos/C#/Vetores/ExecicioVetores/ExecicioVetores/obj/Debug/net9.0/ExecicioVetores.dll
+/home/erickrossine/Documentos/C#/Vetores/ExecicioVetores/ExecicioVetores/obj/Debug/net9.0/refint/ExecicioVetores.dll
+/home/erickrossine/Documentos/C#/Vetores/ExecicioVetores/ExecicioVetores/obj/Debug/net9.0/ExecicioVetores.pdb
+/home/erickrossine/Documentos/C#/Vetores/ExecicioVetores/ExecicioVetores/obj/Debug/net9.0/ExecicioVetores.genruntimeconfig.cache
+/home/erickrossine/Documentos/C#/Vetores/ExecicioVetores/ExecicioVetores/obj/Debug/net9.0/ref/ExecicioVetores.dll
