@@ -1,0 +1,14 @@
+/home/erickrossine/Documentos/C#/ExercicioSemPiedade/ExercicioSemPiedade/bin/Debug/net9.0/ExercicioSemPiedade
+/home/erickrossine/Documentos/C#/ExercicioSemPiedade/ExercicioSemPiedade/bin/Debug/net9.0/ExercicioSemPiedade.deps.json
+/home/erickrossine/Documentos/C#/ExercicioSemPiedade/ExercicioSemPiedade/bin/Debug/net9.0/ExercicioSemPiedade.runtimeconfig.json
+/home/erickrossine/Documentos/C#/ExercicioSemPiedade/ExercicioSemPiedade/bin/Debug/net9.0/ExercicioSemPiedade.dll
+/home/erickrossine/Documentos/C#/ExercicioSemPiedade/ExercicioSemPiedade/bin/Debug/net9.0/ExercicioSemPiedade.pdb
+/home/erickrossine/Documentos/C#/ExercicioSemPiedade/ExercicioSemPiedade/obj/Debug/net9.0/ExercicioSemPiedade.GeneratedMSBuildEditorConfig.editorconfig
+/home/erickrossine/Documentos/C#/ExercicioSemPiedade/ExercicioSemPiedade/obj/Debug/net9.0/ExercicioSemPiedade.AssemblyInfoInputs.cache
+/home/erickrossine/Documentos/C#/ExercicioSemPiedade/ExercicioSemPiedade/obj/Debug/net9.0/ExercicioSemPiedade.AssemblyInfo.cs
+/home/erickrossine/Documentos/C#/ExercicioSemPiedade/ExercicioSemPiedade/obj/Debug/net9.0/ExercicioSemPiedade.csproj.CoreCompileInputs.cache
+/home/erickrossine/Documentos/C#/ExercicioSemPiedade/ExercicioSemPiedade/obj/Debug/net9.0/ExercicioSemPiedade.dll
+/home/erickrossine/Documentos/C#/ExercicioSemPiedade/ExercicioSemPiedade/obj/Debug/net9.0/refint/ExercicioSemPiedade.dll
+/home/erickrossine/Documentos/C#/ExercicioSemPiedade/ExercicioSemPiedade/obj/Debug/net9.0/ExercicioSemPiedade.pdb
+/home/erickrossine/Documentos/C#/ExercicioSemPiedade/ExercicioSemPiedade/obj/Debug/net9.0/ExercicioSemPiedade.genruntimeconfig.cache
+/home/erickrossine/Documentos/C#/ExercicioSemPiedade/ExercicioSemPiedade/obj/Debug/net9.0/ref/ExercicioSemPiedade.dll

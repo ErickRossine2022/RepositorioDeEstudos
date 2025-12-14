@@ -1,0 +1,14 @@
+/home/erickrossine/Documentos/C#/Listas/Listas/bin/Debug/net9.0/Listas
+/home/erickrossine/Documentos/C#/Listas/Listas/bin/Debug/net9.0/Listas.deps.json
+/home/erickrossine/Documentos/C#/Listas/Listas/bin/Debug/net9.0/Listas.runtimeconfig.json
+/home/erickrossine/Documentos/C#/Listas/Listas/bin/Debug/net9.0/Listas.dll
+/home/erickrossine/Documentos/C#/Listas/Listas/bin/Debug/net9.0/Listas.pdb
+/home/erickrossine/Documentos/C#/Listas/Listas/obj/Debug/net9.0/Listas.GeneratedMSBuildEditorConfig.editorconfig
+/home/erickrossine/Documentos/C#/Listas/Listas/obj/Debug/net9.0/Listas.AssemblyInfoInputs.cache
+/home/erickrossine/Documentos/C#/Listas/Listas/obj/Debug/net9.0/Listas.AssemblyInfo.cs
+/home/erickrossine/Documentos/C#/Listas/Listas/obj/Debug/net9.0/Listas.csproj.CoreCompileInputs.cache
+/home/erickrossine/Documentos/C#/Listas/Listas/obj/Debug/net9.0/Listas.dll
+/home/erickrossine/Documentos/C#/Listas/Listas/obj/Debug/net9.0/refint/Listas.dll
+/home/erickrossine/Documentos/C#/Listas/Listas/obj/Debug/net9.0/Listas.pdb
+/home/erickrossine/Documentos/C#/Listas/Listas/obj/Debug/net9.0/Listas.genruntimeconfig.cache
+/home/erickrossine/Documentos/C#/Listas/Listas/obj/Debug/net9.0/ref/Listas.dll

@@ -1,0 +1,14 @@
+/home/erickrossine/Documentos/C#/ExercicioList/ExercicioList/bin/Debug/net9.0/ExercicioList
+/home/erickrossine/Documentos/C#/ExercicioList/ExercicioList/bin/Debug/net9.0/ExercicioList.deps.json
+/home/erickrossine/Documentos/C#/ExercicioList/ExercicioList/bin/Debug/net9.0/ExercicioList.runtimeconfig.json
+/home/erickrossine/Documentos/C#/ExercicioList/ExercicioList/bin/Debug/net9.0/ExercicioList.dll
+/home/erickrossine/Documentos/C#/ExercicioList/ExercicioList/bin/Debug/net9.0/ExercicioList.pdb
+/home/erickrossine/Documentos/C#/ExercicioList/ExercicioList/obj/Debug/net9.0/ExercicioList.GeneratedMSBuildEditorConfig.editorconfig
+/home/erickrossine/Documentos/C#/ExercicioList/ExercicioList/obj/Debug/net9.0/ExercicioList.AssemblyInfoInputs.cache
+/home/erickrossine/Documentos/C#/ExercicioList/ExercicioList/obj/Debug/net9.0/ExercicioList.AssemblyInfo.cs
+/home/erickrossine/Documentos/C#/ExercicioList/ExercicioList/obj/Debug/net9.0/ExercicioList.csproj.CoreCompileInputs.cache
+/home/erickrossine/Documentos/C#/ExercicioList/ExercicioList/obj/Debug/net9.0/ExercicioList.dll
+/home/erickrossine/Documentos/C#/ExercicioList/ExercicioList/obj/Debug/net9.0/refint/ExercicioList.dll
+/home/erickrossine/Documentos/C#/ExercicioList/ExercicioList/obj/Debug/net9.0/ExercicioList.pdb
+/home/erickrossine/Documentos/C#/ExercicioList/ExercicioList/obj/Debug/net9.0/ExercicioList.genruntimeconfig.cache
+/home/erickrossine/Documentos/C#/ExercicioList/ExercicioList/obj/Debug/net9.0/ref/ExercicioList.dll
