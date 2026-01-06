@@ -23,6 +23,7 @@ Repositório dedicado ao **aprendizado prático em C#**, com foco em **Programa�
    - [Modificador `params` e Tuplas](#️-modificador-params-e-tuplas)
     - [Modificadores `ref` e `out`](#modificadores-ref-e-out)
     - [Boxing e Unboxing](#boxing-e-unboxing)
+    - [Enumerações (`enum`)](#️-enumera%C3%A7%C3%B5es-enum)
 
 3. **[Estrutura do Repositório](#-estrutura-do-repositório)**
 4. **[Dicas de Projeto e Estrutura](#-dicas-de-projeto-e-estrutura)**
@@ -1099,6 +1100,50 @@ Resumo rápido:
 - **Boxing**: value type -> object (alocação no heap, custo)
 - **Unboxing**: object -> value type (cast explícito, pode lançar)
 - **Evitar** quando performance/GC for crítica; prefira generics e passagem por referência quando adequado.
+
+---
+
+### 🔹 Enumerações (`enum`)
+
+`enum` é um tipo que representa um conjunto nomeado de valores constantes — ideal para estados ou opções com nomes legíveis (evita números "mágicos").
+
+#### Exemplo simples
+
+```csharp
+public enum OrderStatus
+{
+    PendingPayment = 0,
+    Processing = 1,
+    Shipped = 2,
+    Delivered = 3
+}
+
+public class Order
+{
+    public int Id { get; set; }
+    public DateTime Moment { get; set; }
+    public OrderStatus Status { get; set; }
+
+    public override string ToString() =>
+        $"Order {Id} - {Moment:g} - Status: {Status}";
+}
+```
+
+#### Conversões e boas práticas
+
+- Enum → string: `string s = OrderStatus.Processing.ToString();`
+- String → enum: `Enum.TryParse<OrderStatus>(input, ignoreCase: true, out var status)` (recomenda-se `TryParse`)
+- Enum → int: `int v = (int)OrderStatus.Shipped;`
+- Int → enum: `if (Enum.IsDefined(typeof(OrderStatus), 2)) status = (OrderStatus)2;` — valide antes
+- Persistência: ao armazenar em banco, prefira definir valores inteiros explícitos para evitar que reordenações quebrem dados
+- JSON: para serializar como string, use `System.Text.Json` com `JsonStringEnumConverter` ou atributos apropriados
+- Flags: para máscaras bitwise, aplique `[Flags]` e use potências de 2
+
+#### Recomendações
+
+- Use `Enum.TryParse(..., ignoreCase: true, out ...)` para entrada externa
+- Evite `Enum.Parse` sem validação (lança exceção em entradas inválidas)
+- Escreva testes cobrindo parsing inválido e conversões
 
 ## 📁 Estrutura do Repositório
 

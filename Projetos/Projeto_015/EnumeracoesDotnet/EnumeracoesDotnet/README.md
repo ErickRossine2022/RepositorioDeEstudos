@@ -1,53 +1,53 @@
 # Projeto: EnumeracoesDotnet
 
-Este projeto demonstra, de forma simples, o uso de `enum` em C# atravÈs de um exemplo de pedidos (`Order`).
+Este projeto demonstra, de forma simples, o uso de `enum` em C# atrav√©s de um exemplo de pedidos (`Order`).
 
-Objetivo: explicar o conceito de `enum`, mostrar a organizaÁ„o do projeto e exemplificar conversıes entre `enum`, `string` e `int`.
+Objetivo: explicar o conceito de `enum`, mostrar a organiza√ß√£o do projeto e exemplificar convers√µes entre `enum`, `string` e `int`.
 
 -----------------------------------------
 
-Sum·rio r·pido
+Sum√°rio r√°pido
 
-- O que È `enum`?
+- O que √© `enum`?
 - Por que usar `enum`?
 - Estrutura do projeto
-- Conversıes entre `enum`, `string` e `int`
+- Convers√µes entre `enum`, `string` e `int`
 - Como executar
-- ObservaÁıes e sugestıes
+- Observa√ß√µes e sugest√µes
 
 -----------------------------------------
 
-O que È `enum`?
+O que √© `enum`?
 
-`enum` (enumeraÁ„o) È um tipo que define um conjunto nomeado de valores constantes. … ideal para representar estados ou opÁıes com nomes legÌveis em vez de n˙meros m·gicos.
+`enum` (enumera√ß√£o) √© um tipo que define um conjunto nomeado de valores constantes. √â ideal para representar estados ou op√ß√µes com nomes leg√≠veis em vez de n√∫meros "m√°gicos".
 
 Por que usar `enum`?
 
-- Legibilidade: `OrderStatus.Processing` È mais claro que `1`.
-- SeguranÁa e manutenÁ„o: reduz erros ao evitar n˙meros m·gicos espalhados pelo cÛdigo.
-- DocumentaÁ„o implÌcita: os nomes dos valores explicam o significado dos estados.
+- Legibilidade: `OrderStatus.Processing` √© mais claro que `1`.
+- Seguran√ßa e manuten√ß√£o: reduz erros ao evitar n√∫meros "m√°gicos" espalhados pelo c√≥digo.
+- Documenta√ß√£o impl√≠cita: os nomes dos valores explicam o significado dos estados.
 
 Exemplo do projeto (resumo)
 
-- `OrderStatus` (enum) contÈm: `PendingPayment`, `Processing`, `Shipped`, `Delivered`.
+- `OrderStatus` (enum) cont√©m: `PendingPayment`, `Processing`, `Shipped`, `Delivered`.
 - `Order` possui `Id`, `Moment` (DateTime) e `Status` (do tipo `OrderStatus`).
-- `Program.cs` cria um `Order`, imprime seus dados e demonstra conversıes.
+- `Program.cs` cria um `Order`, imprime seus dados e demonstra convers√µes.
 
 Arquivos principais
 
-- `Program.cs` ó ponto de entrada e demonstraÁıes.
-- `Entities/Order.cs` ó classe `Order` com `ToString()` para exibir informaÁıes.
-- `Entities/Enums/OrderStatus.cs` ó definiÁ„o da `enum`.
+- `Program.cs` √© o ponto de entrada e cont√©m as demonstra√ß√µes.
+- `Entities/Order.cs` √© a classe `Order` com `ToString()` para exibir informa√ß√µes.
+- `Entities/Enums/OrderStatus.cs` √© a defini√ß√£o da `enum`.
 
-Como funcionam as conversıes
+Como funcionam as convers√µes
 
 - Enum para string:
 
   `string text = OrderStatus.Processing.ToString(); // "Processing"`
 
-- String para enum (recomendado usar `TryParse`):
+- String para enum (recomenda-se usar `Enum.TryParse`, com `ignoreCase: true` se aceitar entrada externa):
 
-  `if (Enum.TryParse<OrderStatus>(input, out var status)) { /* sucesso */ } else { /* inv·lido */ }`
+  `if (Enum.TryParse<OrderStatus>(input, ignoreCase: true, out var status)) { /* sucesso */ } else { /* inv√°lido */ }`
 
 - Enum para inteiro:
 
@@ -59,33 +59,33 @@ Como funcionam as conversıes
 
 Como executar
 
-No diretÛrio do projeto execute:
+No diret√≥rio do projeto execute:
 
 ```
 cd Projetos/Projeto_015/EnumeracoesDotnet/EnumeracoesDotnet
 dotnet run
 ```
 
-ObservaÁıes e sugestıes de melhoria
+Observa√ß√µes e sugest√µes de melhoria
 
 - Ortografia: o valor `PendingPaymente` foi corrigido para `PendingPayment`.
-- Visibilidade: os tipos foram alterados para `public` para facilitar uso fora do assembly.
+- Visibilidade: considere tornar os tipos `public` para facilitar uso fora do assembly.
 - Parsing: prefira `Enum.TryParse(..., ignoreCase: true, out ...)` quando aceitar entrada externa.
-- PersistÍncia: se salvar valores no banco, defina explicitamente os inteiros da enum para evitar que mudanÁas de ordem quebrem dados.
-- Flags: se precisar de m·scaras bitwise, marque a enum com `[Flags]` e use potÍncias de 2.
+- Persist√™ncia: se salvar valores no banco, defina explicitamente os valores inteiros da enum para evitar que mudan√ßas de ordem quebrem dados.
+- Flags: se precisar de m√°scaras bitwise, marque a enum com `[Flags]` e use pot√™ncias de 2.
 
-Conceitos avanÁados recomendados para incluir
+Conceitos avan√ßados recomendados para incluir
 
-- Tipo subjacente do `enum` (por padr„o `int`) e como mud·-lo (`: byte`, `: long`).
+- Tipo subjacente do `enum` (por padr√£o `int`) e como mud√°-lo (`: byte`, `: long`).
 - Uso de `Enum.IsDefined` para validar valores antes de converter.
-- DiferenÁas entre `Enum.Parse` e `Enum.TryParse` e tratamento de erros.
-- SerializaÁ„o JSON de enums e controle com `System.Text.Json` (`JsonStringEnumConverter`) ou atributos especÌficos.
-- Testes unit·rios cobrindo parsing inv·lido e conversıes.
+- Diferen√ßas entre `Enum.Parse` e `Enum.TryParse` e tratamento de erros.
+- Serializa√ß√£o JSON de enums e controle com `System.Text.Json` (`JsonStringEnumConverter`) ou atributos espec√≠ficos.
+- Testes unit√°rios cobrindo parsing inv√°lido e convers√µes.
 
 -----------------------------------------
 
 Se quiser, eu posso:
 
-- Aplicar outras melhorias no cÛdigo (ex.: testes, tratamento de parsing, limpeza de coment·rios).
-- Adicionar um README mais detalhado na pasta do projeto cobrindo exemplos de cÛdigo e testes.
+- Aplicar outras melhorias no c√≥digo (ex.: testes, tratamento de parsing, limpeza de coment√°rios).
+- Adicionar um README mais detalhado na pasta do projeto cobrindo exemplos de c√≥digo e testes.
 
