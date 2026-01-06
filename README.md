@@ -753,36 +753,37 @@ class Program
 
 ### ⚙️ Modificador `params` e Tuplas
 
-O `params` é um modificador que permite métodos aceitar um **número variável de argumentos**. Combinado com **tuplas**, cria APIs flexíveis e intuitivas.
+**`params`** permite que um método aceite **0 ou mais** argumentos do mesmo tipo sem precisar criar um array manualmente.
 
-#### 🔹 O que é `params`?
+- Regras simples:
+  - Deve ser **o último parâmetro**.
+  - Apenas **um `params`** por método.
 
-`params` permite chamar um método passando vários valores sem precisar criar um array manualmente.
-
-**Regras importantes:**
-- ✔ Deve ser o **último parâmetro** do método
-- ✔ Apenas **um `params` por método**
-- ✔ Não funciona com `ref` ou `out`
-
-**Exemplo simples:**
-
+**Exemplo — `params`:**
 ```csharp
-public class Calculadora
-{
-    // Método com params
-    public static int Somar(params int[] numeros)
-    {
-        int total = 0;
-        foreach (int n in numeros)
-            total += n;
-        return total;
-    }
-}
-
-// Duas formas de chamar:
-int resultado1 = Calculadora.Somar(1, 2, 3, 4);        // Sem array
-int resultado2 = Calculadora.Somar(new int[] { 5, 6 }); // Com array
+public static int Somar(params int[] numeros) => numeros.Sum();
+// Uso:
+var total = Somar(1, 2, 3); // 6
 ```
+
+**Tuplas** são formas rápidas de agrupar valores sem criar uma classe ou struct. Prefira tuplas **nomeadas** para clareza.
+
+**Exemplo — Tupla nomeada:**
+```csharp
+(string Nome, int Idade) GetPessoa() => ("Alice", 25);
+var pessoa = GetPessoa();
+Console.WriteLine(pessoa.Nome);
+```
+
+**Combinação (útil para APIs flexíveis):**
+```csharp
+public void RegistrarMultiplos(params (string Username, string Email)[] users)
+{
+    foreach (var u in users) Console.WriteLine(u.Username);
+}
+```
+
+> 💡 Dica rápida: para retornar múltiplos valores, prefira **tuplas** sobre `out` em APIs públicas — são mais legíveis e testáveis.
 
 ---
 
@@ -1011,49 +1012,25 @@ if (PasswordHelper.VerificarPassword(usuarioArmazenado.Password, senhaEntrada))
 
 ### 🔹 Modificadores `ref` e `out`
 
-Os modificadores `ref` e `out` permitem passar argumentos por **referência** para um método — ou seja, o método recebe acesso direto à variável original, não a uma cópia.
+- `ref`: a variável **precisa** estar inicializada antes da chamada; o método pode **ler e escrever** o valor.
+- `out`: a variável **não precisa** estar inicializada; o método **deve** atribuir um valor antes de retornar.
 
-Principais diferenças e regras:
-- **`ref`**: a variável passada precisa estar **inicializada** antes da chamada. O método pode ler e escrever o valor.
-- **`out`**: a variável **não precisa** estar inicializada antes da chamada, mas **obrigatoriamente** deve ser atribuída dentro do método antes de retornar.
-- Ambos são usados para evitar cópias (útil para structs grandes) ou para retornar múltiplos valores sem usar tuplas/objetos.
-- Só pode haver **um `ref` ou `out` por parâmetro**, e eles devem aparecer na assinatura do método.
-
-Exemplo prático — `ref` (swap):
-
+**Exemplo `ref` (swap):**
 ```csharp
-public static void Swap(ref int a, ref int b)
-{
-    int temp = a;
-    a = b;
-    b = temp;
-}
-
-int x = 5;
-int y = 10;
-Swap(ref x, ref y);
-// x == 10, y == 5
+void Swap(ref int a, ref int b) { int t = a; a = b; b = t; }
 ```
 
-Exemplo prático — `out` (retornar múltiplos resultados):
-
+**Exemplo `out` (padrão Try):**
 ```csharp
-public static bool TryParseInt(string s, out int value)
-{
-    return int.TryParse(s, out value);
-}
-
-if (TryParseInt("123", out int result))
-{
-    Console.WriteLine(result); // 123
-}
+bool TryParseInt(string s, out int value) => int.TryParse(s, out value);
+if (TryParseInt("123", out var n)) Console.WriteLine(n);
 ```
 
-Boas práticas e observações:
-- Prefira `out` para métodos do tipo `TryXxx` (padrão do BCL) quando quiser sinalizar sucesso/falha e retornar um valor.
-- Use `ref` quando o método deve tanto ler quanto escrever o valor e a variável já possui um valor válido.
-- Desde C# 7, é possível declarar variáveis `out` inline: `if (int.TryParse(s, out var n))`.
-- Para evitar efeitos colaterais difíceis de testar, prefira retornar tuplas ou DTOs quando fizer sentido em APIs públicas; `ref`/`out` são úteis em código de baixo nível ou para otimizações.
+**Boas práticas:**
+- Use `out` para métodos do tipo `TryXxx`.
+- Prefira **retornar tuplas ou objetos** em APIs públicas para evitar efeitos colaterais e melhorar legibilidade.
+
+---
 
 
 ### 🔹 Boxing e Unboxing
@@ -1110,45 +1087,34 @@ Resumo rápido:
 
 ### 🔹 Enumerações (`enum`)
 
-`enum` é um tipo que representa um conjunto nomeado de valores constantes — ideal para estados ou opções com nomes legíveis (evita números "mágicos").
+`enum` representa um conjunto nomeado de constantes — ótimo para estados e opções legíveis (evita números "mágicos").
 
-#### Exemplo simples
-
+**Exemplo simples:**
 ```csharp
-public enum OrderStatus
-{
-    PendingPayment = 0,
-    Processing = 1,
-    Shipped = 2,
-    Delivered = 3
-}
-
-public class Order
-{
-    public int Id { get; set; }
-    public DateTime Moment { get; set; }
-    public OrderStatus Status { get; set; }
-
-    public override string ToString() =>
-        $"Order {Id} - {Moment:g} - Status: {Status}";
-}
+public enum OrderStatus { PendingPayment = 0, Processing = 1, Shipped = 2, Delivered = 3 }
 ```
 
-#### Conversões e boas práticas
+**Operações comuns:**
+- Para obter nome: `OrderStatus.Processing.ToString()`
+- Para parse seguro: `Enum.TryParse<OrderStatus>(input, ignoreCase: true, out var status)`
+- Para obter valor numérico: `int v = (int)OrderStatus.Shipped`
+- Para converter de int: `if (Enum.IsDefined(typeof(OrderStatus), 2)) status = (OrderStatus)2;`
 
-- Enum → string: `string s = OrderStatus.Processing.ToString();`
-- String → enum: `Enum.TryParse<OrderStatus>(input, ignoreCase: true, out var status)` (recomenda-se `TryParse`)
-- Enum → int: `int v = (int)OrderStatus.Shipped;`
-- Int → enum: `if (Enum.IsDefined(typeof(OrderStatus), 2)) status = (OrderStatus)2;` — valide antes
-- Persistência: ao armazenar em banco, prefira definir valores inteiros explícitos para evitar que reordenações quebrem dados
-- JSON: para serializar como string, use `System.Text.Json` com `JsonStringEnumConverter` ou atributos apropriados
-- Flags: para máscaras bitwise, aplique `[Flags]` e use potências de 2
+**JSON & Flags:**
+- Use `JsonStringEnumConverter` para serializar como nomes em JSON.
+- Para máscaras bitwise, use `[Flags]` com valores em potências de 2.
 
-#### Recomendações
+**Exemplo prático — Projeto `EnumeracoesDotnet` (compacto):**
+- Local: `Projetos/Projeto_015/EnumeracoesDotnet/EnumeracoesDotnet`
+- Como executar:
+```bash
+cd Projetos/Projeto_015/EnumeracoesDotnet/EnumeracoesDotnet
+dotnet run
+```
+- O projeto cria um `Order`, mostra o `Status` e demonstra conversões `enum ⇄ string` e `enum ⇄ int`.
+- Recomendações rápidas: teste parsing inválido, use `TryParse(..., ignoreCase:true)`, e adicione `JsonStringEnumConverter` se for serializar em APIs.
 
-- Use `Enum.TryParse(..., ignoreCase: true, out ...)` para entrada externa
-- Evite `Enum.Parse` sem validação (lança exceção em entradas inválidas)
-- Escreva testes cobrindo parsing inválido e conversões
+> ✅ Mantive o exemplo do projeto aqui de forma compacta para não poluir a seção, mas com todas as informações essenciais.
 
 ---
 
@@ -1786,55 +1752,6 @@ Se este material foi útil, considere:
 
 ---
 
-## 📘 Exemplo: Projeto `EnumeracoesDotnet`
+<!-- Exemplo do projeto 'EnumeracoesDotnet' movido para a seção 'Enumerações' acima. -->
 
-Este repositório inclui um projeto de exemplo que demonstra o uso de `enum` em C#.
-
-- Localização: `Projetos/Projeto_015/EnumeracoesDotnet/EnumeracoesDotnet`
-- Objetivo: explicar o conceito de `enum` com um exemplo simples de pedidos (`Order`).
-
-Resumo rápido
-
-- `OrderStatus` (enum) representa estados do pedido: `PendingPayment`, `Processing`, `Shipped`, `Delivered`.
-- `Order` (classe) contém `Id`, `Moment` (DateTime) e `Status` (`OrderStatus`).
-- `Program.cs` cria uma instância de `Order`, imprime seus dados e demonstra conversões entre `enum` e `string`.
-
-Arquivos principais
-
-- `Program.cs` — ponto de entrada e demonstrações.
-- `Entities/Order.cs` — classe `Order` com `ToString()` para exibir informações.
-- `Entities/Enums/OrderStatus.cs` — definição da `enum`.
-
-Como executar
-
-No diretório do projeto execute:
-
-```
-cd Projetos/Projeto_015/EnumeracoesDotnet/EnumeracoesDotnet
-dotnet run
-```
-
-Conversões úteis
-
-- Enum para string: `string s = OrderStatus.Processing.ToString();`
-- String para enum (seguro): `Enum.TryParse<OrderStatus>(input, out var status)` — preferível ao `Enum.Parse<T>`.
-- Enum para inteiro: `int value = (int)OrderStatus.Shipped;`
-- Inteiro para enum (valide com `Enum.IsDefined` antes de cast):
-  `if (Enum.IsDefined(typeof(OrderStatus), 2)) status = (OrderStatus)2;`
-
-Observações e sugestões de melhoria
-
-- Corrigir ortografia: `PendingPaymente` → `PendingPayment` (consistência com inglês e convenção PascalCase).
-- Visibilidade: atualmente `OrderStatus` e `Order` são `internal`; considere torná-los `public` se forem usados fora do assembly.
-- Prefira `Enum.TryParse` com `ignoreCase:true` quando ler strings externas.
-- Considere atribuir valores explícitos quando depender de valores numéricos persistidos (banco, API).
-- Para conjuntos de flags bitwise, use o atributo `[Flags]` e valores de potência de 2.
-- Boas práticas: nomes em `PascalCase`, evite comentários redundantes e use `ToString()` formatado quando necessário.
-
-Conceitos que faltam (sugestão de conteúdo a incluir no README do projeto)
-
-- Explicação sobre o tipo subjacente do `enum` (por padrão `int`) e como mudar (`: byte`, `: long`).
-- Uso de `Enum.IsDefined` para validar valores antes de converter.
-- Diferenças entre `Enum.Parse` e `Enum.TryParse` e riscos de exceção.
-- Exemplos de serialização/ desserialização (JSON) de enums e como controlar com `[JsonConverter]` ou configurar `System.Text.Json`.
-- Exemplo de testes unitários cobrindo parsing inválido e conversões.
+<!-- Detalhes do exemplo foram condensados e adicionados à seção 'Enumerações' para evitar duplicação -->
