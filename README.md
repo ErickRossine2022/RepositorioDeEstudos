@@ -23,7 +23,10 @@ Repositório dedicado ao **aprendizado prático em C#**, com foco em **Programa�
    - [Modificador `params` e Tuplas](#️-modificador-params-e-tuplas)
     - [Modificadores `ref` e `out`](#modificadores-ref-e-out)
     - [Boxing e Unboxing](#boxing-e-unboxing)
-    - [Enumerações (`enum`)](#️-enumera%C3%A7%C3%B5es-enum)
+    - [Enumerações (`enum`)](#enum)
+    - [LINQ](#linq)
+    - [async/await & HttpClient](#async-await-httpclient)
+    - [Serialização JSON](#serializacao-json)
 
 3. **[Estrutura do Repositório](#-estrutura-do-repositório)**
 4. **[Dicas de Projeto e Estrutura](#-dicas-de-projeto-e-estrutura)**
@@ -1103,6 +1106,8 @@ Resumo rápido:
 
 ---
 
+<a id="enum"></a>
+
 ### 🔹 Enumerações (`enum`)
 
 `enum` é um tipo que representa um conjunto nomeado de valores constantes — ideal para estados ou opções com nomes legíveis (evita números "mágicos").
@@ -1144,6 +1149,87 @@ public class Order
 - Use `Enum.TryParse(..., ignoreCase: true, out ...)` para entrada externa
 - Evite `Enum.Parse` sem validação (lança exceção em entradas inválidas)
 - Escreva testes cobrindo parsing inválido e conversões
+
+---
+
+### 🔹 LINQ
+
+<a id="linq"></a>
+LINQ (Language Integrated Query) facilita consultas em coleções (`IEnumerable<T>`, `IQueryable<T>`). Exemplos comuns: `Where`, `Select`, `OrderBy`, `FirstOrDefault`, `Sum`.
+
+Exemplo curto:
+```csharp
+int[] nums = {1,2,3,4,5};
+var pares = nums.Where(n => n % 2 == 0).Select(n => n * 2);
+Console.WriteLine(string.Join(", ", pares)); // 4, 8
+```
+
+Boas práticas: prefira consultas sobre `IEnumerable<T>` para memória e `IQueryable<T>` para tradução em bancos (EF). Use `FirstOrDefault()` com checagem nula.
+
+---
+
+### 🔹 async/await & HttpClient
+
+<a id="async-await-httpclient"></a>
+Use `async`/`await` para operações I/O não bloqueantes; `HttpClient` é a API recomendada para chamadas HTTP. Sempre trate exceções e reutilize `HttpClient` quando possível.
+
+Exemplo curto:
+```csharp
+using var client = new HttpClient();
+async Task<string> GetHtmlAsync(string url)
+{
+    try
+    {
+        return await client.GetStringAsync(url);
+    }
+    catch (HttpRequestException ex)
+    {
+        Console.WriteLine($"Erro HTTP: {ex.Message}");
+        return string.Empty;
+    }
+}
+```
+
+Dica: evite criar muitas instâncias de `HttpClient`; prefira singleton ou factory (IHttpClientFactory em apps ASP.NET).
+
+---
+
+### 🔹 Serialização JSON
+
+<a id="serializacao-json"></a>
+Explique como serializar/deserializar com `System.Text.Json` e como configurar enums para serializarem como string.
+
+Exemplo curto:
+```csharp
+using System.Text.Json;
+using System.Text.Json.Serialization;
+
+var options = new JsonSerializerOptions()
+{
+    Converters = { new JsonStringEnumConverter() },
+    WriteIndented = true
+};
+string json = JsonSerializer.Serialize(myObject, options);
+var obj = JsonSerializer.Deserialize<MyType>(json, options);
+```
+
+Obs: `JsonStringEnumConverter` permite que enums sejam serializados como nome ("Processing") em vez de inteiro.
+
+---
+
+### ✅ Tópicos adicionais recomendados (encontrados no código)
+
+Pelo conteúdo das pastas e exemplos no repositório, recomendo incluir pequenas notas/links para estes tópicos em **Tópicos Avançados** ou no índice:
+
+- **LINQ** (ex.: `System.Linq` aparece em vários exercícios) — exemplos de `Where`, `Select`, `Sum`, `FirstOrDefault`.
+- **async/await + HttpClient** (há exemplos de `HttpClient` e métodos `async Task` em `web_scrapping`) — boas práticas e tratamento de exceções.
+- **Serialização JSON** (usado/consultado em exemplos e `System.Text.Json`) — exemplificar `JsonSerializer` e `JsonStringEnumConverter`.
+- **Exceções e tratamento (`try/catch`)** — padrão para entradas inválidas e validações.
+- **Delegates / Events / Lambda expressions** — ensino rápido e exemplos práticos, se houver material nos projetos.
+- **Extension methods / Records / Pattern matching** — conceitos modernos do C# para atualizar conteúdo.
+- **Top-level statements / Global usings** (projetos usam recursos modernos do .NET 6+/9) — breve nota explicativa.
+
+> 💡 Sugestão: posso incluir seções curtas com exemplos e links para os projetos que já demonstram esses conceitos.
 
 ## 📁 Estrutura do Repositório
 
