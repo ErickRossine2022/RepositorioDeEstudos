@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ExecicioVetores")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+613027d72c4e91749a9576ef9bacb9294523803d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8b52c8df1b4f73dd6ee39511952aae340b812608")]
 [assembly: System.Reflection.AssemblyProductAttribute("ExecicioVetores")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ExecicioVetores")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
