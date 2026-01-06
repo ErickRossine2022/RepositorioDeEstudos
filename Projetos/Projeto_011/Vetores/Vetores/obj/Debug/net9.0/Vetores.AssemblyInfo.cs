@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Vetores")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8b52c8df1b4f73dd6ee39511952aae340b812608")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+134463891d9a054bc1e1360cf3fa8d33a0d9dd15")]
 [assembly: System.Reflection.AssemblyProductAttribute("Vetores")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Vetores")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
