@@ -6,36 +6,40 @@ Repositório dedicado ao **aprendizado prático em C#**, com foco em **Programa�
 
 ## 📚 Índice
 
-1. **[Conceitos Fundamentais](#-conceitos-fundamentais)**
-   - [Classes](#️-classes)
-   - [Atributos e Variáveis](#-atributos--variáveis)
-   - [Construtores](#️-construtores)
-   - [Métodos](#-métodos)
-   - [Listas](#️-listas)
-   - [Vetores (Arrays)](#️-vetores-arrays)
+1. **[Conceitos Fundamentais](#conceitos-fundamentais)**
+   - [Classes](#classes)
+   - [Atributos e Variáveis](#atributos-e-variaveis)
+   - [Construtores](#construtores)
+   - [Métodos](#metodos)
+   - [Listas](#listas)
+   - [Vetores (Arrays)](#vetores-arrays)
 
-2. **[Tópicos Avançados](#-tópicos-avançados)**
-   - [Palavra `this` e Referenciais](#-palavra-this-e-referenciais)
-   - [Sobrecarga (Overloading)](#️-sobrecarga-overloading)
-   - [Classes vs Structs](#-classe-vs-struct)
-   - [Tipos Valor e Referência](#-tipos-valor-vs-tipos-referência)
-   - [Garbage Collector](#-garbage-collector)
-   - [Modificador `params` e Tuplas](#️-modificador-params-e-tuplas)
-    - [Modificadores `ref` e `out`](#modificadores-ref-e-out)
-    - [Boxing e Unboxing](#boxing-e-unboxing)
-    - [Enumerações (`enum`)](#enum)
-    - [LINQ](#linq)
-    - [async/await & HttpClient](#async-await-httpclient)
-    - [Serialização JSON](#serializacao-json)
+2. **[Tópicos Avançados](#topicos-avancados)**
+   - [Palavra `this` e Referenciais](#palavra-this-e-referenciais)
+   - [Sobrecarga (Overloading)](#sobrecarga-overloading)
+   - [Classes vs Structs](#classe-vs-struct)
+   - [Tipos Valor e Referência](#tipos-valor-vs-tipos-referencia)
+   - [Garbage Collector](#garbage-collector)
+   - [Modificador `params` e Tuplas](#modificador-params-e-tuplas)
+     - [Modificadores `ref` e `out`](#modificadores-ref-e-out)
+     - [Boxing e Unboxing](#boxing-e-unboxing)
+     - [Enumerações (`enum`)](#enum)
+     - [LINQ](#linq)
+     - [async/await & HttpClient](#async-await-httpclient)
+     - [Serialização JSON](#serializacao-json)
 
-3. **[Estrutura do Repositório](#-estrutura-do-repositório)**
-4. **[Dicas de Projeto e Estrutura](#-dicas-de-projeto-e-estrutura)**
-5. **[Ferramentas Recomendadas](#️-ferramentas-recomendadas)**
-6. **[Sobre o Autor](#-sobre-o-autor)**
+3. **[Estrutura do Repositório](#estrutura-do-repositorio)**
+4. **[Dicas de Projeto e Estrutura](#dicas-de-projeto-e-estrutura)**
+5. **[Ferramentas Recomendadas](#ferramentas-recomendadas)**
+6. **[Sobre o Autor](#sobre-o-autor)**
 
 ---
 
+<a id="conceitos-fundamentais"></a>
+
 ## 🎯 Conceitos Fundamentais
+
+<a id="classes"></a>
 
 ### 🏷️ Classes
 
@@ -66,6 +70,8 @@ public class Pessoa
 
 > 💡 **Dica:** Pense na classe como um **molde**. Cada `new Pessoa()` cria uma **nova instância** desse molde.
 
+<a id="atributos-e-variaveis"></a>
+
 ### 💾 Atributos / Variáveis
 
 Variáveis que armazenam dados dentro de uma classe. Possuem **modificadores de acesso** que controlam sua visibilidade:
@@ -82,6 +88,8 @@ Variáveis que armazenam dados dentro de uma classe. Possuem **modificadores de 
 ```csharp
 private static readonly List<Pessoa> pessoas = new List<Pessoa>();
 ```
+
+<a id="construtores"></a>
 
 ### ⚙️ Construtores
 
@@ -111,6 +119,8 @@ public class Pessoa
 ```
 
 > 💡 **Dica:** Use `this.atributo` para diferenciar o **atributo da classe** do **parâmetro recebido**.
+
+<a id="metodos"></a>
 
 ### 📝 Métodos
 
@@ -143,6 +153,8 @@ Console.WriteLine(p); // Chama automaticamente ToString()
 
 > 💡 **Dica:** `Console.WriteLine(objeto)` automaticamente chama `ToString()` do objeto.
 
+<a id="listas"></a>
+
 ### 🗂️ Listas
 
 Estrutura de dados que **armazena múltiplos objetos** do mesmo tipo em ordem.
@@ -173,6 +185,8 @@ pessoas.RemoveAt(0);
 > 💡 **Dica:** Use `foreach` para iterar sobre listas de forma simples e segura.
 
 ---
+
+<a id="vetores-arrays"></a>
 
 ### 🗃️ Vetores (Arrays)
 
@@ -492,7 +506,12 @@ Array.Copy(nums, novoVetor, nums.Length);
 
 ---
 
+<a id="topicos-avancados"></a>
+<a id="-tópicos-avancados"></a>
+
 ## 🎯 Tópicos Avançados
+
+<a id="palavra-this-e-referenciais"></a>
 
 ### 🔹 Palavra `this` e Referenciais
 
@@ -554,6 +573,8 @@ public class Produto
 
 ---
 
+<a id="sobrecarga-overloading"></a>
+
 ### ⚙️ Sobrecarga (Overloading)
 
 **Sobrecarga** é criar **múltiplos métodos/construtores com o mesmo nome**, mas **parâmetros diferentes** (tipo, quantidade ou ordem).
@@ -608,6 +629,8 @@ public class Calculadora
 ```
 
 ---
+
+<a id="classe-vs-struct"></a>
 
 ### 💯 Classe vs Struct
 
@@ -672,6 +695,8 @@ Console.WriteLine(a.Valor); // 900 (não alterou!)
 
 ---
 
+<a id="tipos-valor-vs-tipos-referencia"></a>
+
 ### 📘 Tipos Valor vs Tipos Referência
 
 Esta é uma diferença fundamental em C#. Entender bem melhora drasticamente sua capacidade de escrever código correto.
@@ -681,6 +706,8 @@ Esta é uma diferença fundamental em C#. Entender bem melhora drasticamente sua
 **Structs criam cópias** → cada variável possui seus próprios dados independentes.
 
 ---
+
+<a id="garbage-collector"></a>
 
 ### 🗑️ Garbage Collector
 
@@ -750,6 +777,8 @@ class Program
 ```
 
 ---
+
+<a id="modificador-params-e-tuplas"></a>
 
 ### ⚙️ Modificador `params` e Tuplas
 
@@ -1010,6 +1039,8 @@ if (PasswordHelper.VerificarPassword(usuarioArmazenado.Password, senhaEntrada))
 
 ---
 
+<a id="modificadores-ref-e-out"></a>
+
 ### 🔹 Modificadores `ref` e `out`
 
 - `ref`: a variável **precisa** estar inicializada antes da chamada; o método pode **ler e escrever** o valor.
@@ -1032,6 +1063,8 @@ if (TryParseInt("123", out var n)) Console.WriteLine(n);
 
 ---
 
+
+<a id="boxing-e-unboxing"></a>
 
 ### 🔹 Boxing e Unboxing
 
@@ -1197,6 +1230,8 @@ Pelo conteúdo das pastas e exemplos no repositório, recomendo incluir pequenas
 
 > 💡 Sugestão: posso incluir seções curtas com exemplos e links para os projetos que já demonstram esses conceitos.
 
+<a id="estrutura-do-repositorio"></a>
+
 ## 📁 Estrutura do Repositório
 
 ```
@@ -1221,6 +1256,8 @@ RepositorioDeEstudos/
 ```
 
 ---
+
+<a id="dicas-de-projeto-e-estrutura"></a>
 
 ## 💡 Dicas de Projeto e Estrutura
 
@@ -1683,6 +1720,8 @@ Na pasta `Dicas/EstruturaProjeto/` você encontra:
 
 ---
 
+<a id="ferramentas-recomendadas"></a>
+
 ## 🛠️ Ferramentas Recomendadas
 
 | Ferramenta | Descrição |
@@ -1718,13 +1757,15 @@ dotnet --version
 
 ## 📖 Como Usar Este Repositório
 
-1. **Comece pelos conceitos fundamentais** → Leia a seção [Conceitos Fundamentais](#-conceitos-fundamentais)
+1. **Comece pelos conceitos fundamentais** → Leia a seção [Conceitos Fundamentais](#conceitos-fundamentais)
 2. **Explore os exercícios** → Veja as pastas em `Exercicios/`
 3. **Estude os projetos** → Projetos maiores em `Projetos/`
 4. **Clone e pratique** → Rode os exemplos localmente
 5. **Aprofunde em tópicos** → Leia as seções [Tópicos Avançados](#-tópicos-avançados)
 
 ---
+
+<a id="sobre-o-autor"></a>
 
 ## 📞 Sobre o Autor
 
@@ -1751,7 +1792,3 @@ Se este material foi útil, considere:
 - 💬 Enviar feedback e sugestões
 
 ---
-
-<!-- Exemplo do projeto 'EnumeracoesDotnet' movido para a seção 'Enumerações' acima. -->
-
-<!-- Detalhes do exemplo foram condensados e adicionados à seção 'Enumerações' para evitar duplicação -->
