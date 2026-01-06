@@ -406,7 +406,8 @@ class Program
             notas[i] = double.Parse(Console.ReadLine() ?? "0");
         }
 
-        Console.WriteLine("\n========== RELATÓRIO ==========\n");
+        Console.WriteLine("\n========== RELATÓRIO ==========\n
+" );
 
         // Exibir dados
         for (int i = 0; i < quantidade; i++)
@@ -1099,7 +1100,6 @@ Resumo rápido:
 - **Unboxing**: object -> value type (cast explícito, pode lançar)
 - **Evitar** quando performance/GC for crítica; prefira generics e passagem por referência quando adequado.
 
-
 ## 📁 Estrutura do Repositório
 
 ```
@@ -1116,6 +1116,7 @@ RepositorioDeEstudos/
 │   ├── Conta_Bancaria/
 │   ├── SobreCarga/
 │   └── EcapslumentoThis/
+│   └── EnumeracoesDotnet/  # Exemplo prático de uso de enums
 ├── Dicas/               # Dicas, padrões e estruturas de projetos
 │   └── EstruturaProjeto/  # Estrutura padrão profissional de projetos .NET
 ├── README.md            # Este arquivo
@@ -1272,39 +1273,11 @@ public interface IUserRepository
 **Para quê serve?** Coordena entre Domain e Infrastructure. É aqui que você coloca a **lógica de fluxo da aplicação**.
 
 ```
-src/Application/
-├── Services/         # Lógica de casos de uso
-└── DTOs/            # Transferência de dados entre camadas
-```
-
-**Exemplo de fluxo:**
-
-```csharp
-// src/Application/Services/UserService.cs
-public class UserService
-{
-    private readonly IUserRepository _repo;
-    
-    public async Task<UserResponseDto> CreateUserAsync(CreateUserDto dto)
-    {
-        // 1. Validar dados
-        if (string.IsNullOrEmpty(dto.Email))
-            throw new ArgumentException("Email obrigatório");
-        
-        // 2. Criar entidade de domínio
-        var user = new User { Name = dto.Name, Email = dto.Email };
-        
-        // 3. Validar regras de negócio
-        if (!user.IsValid())
-            throw new InvalidOperationException("Usuário inválido");
-        
-        // 4. Persistir (Infrastructure)
-        await _repo.AddAsync(user);
-        
-        // 5. Retornar DTO para apresentação
-        return new UserResponseDto { Id = user.Id, Name = user.Name };
-    }
-}
+src/
+├── Domain/              # Coração da aplicação
+├── Application/         # Orquestração de negócio
+├── Infrastructure/      # Acesso a dados
+└── Presentation/        # Interface com usuário
 ```
 
 ---
@@ -1682,4 +1655,55 @@ Se este material foi útil, considere:
 
 ---
 
-**Última atualização:** Dezembro de 2025
+## 📘 Exemplo: Projeto `EnumeracoesDotnet`
+
+Este repositório inclui um projeto de exemplo que demonstra o uso de `enum` em C#.
+
+- Localização: `Projetos/Projeto_015/EnumeracoesDotnet/EnumeracoesDotnet`
+- Objetivo: explicar o conceito de `enum` com um exemplo simples de pedidos (`Order`).
+
+Resumo rápido
+
+- `OrderStatus` (enum) representa estados do pedido: `PendingPayment`, `Processing`, `Shipped`, `Delivered`.
+- `Order` (classe) contém `Id`, `Moment` (DateTime) e `Status` (`OrderStatus`).
+- `Program.cs` cria uma instância de `Order`, imprime seus dados e demonstra conversões entre `enum` e `string`.
+
+Arquivos principais
+
+- `Program.cs` — ponto de entrada e demonstrações.
+- `Entities/Order.cs` — classe `Order` com `ToString()` para exibir informações.
+- `Entities/Enums/OrderStatus.cs` — definição da `enum`.
+
+Como executar
+
+No diretório do projeto execute:
+
+```
+cd Projetos/Projeto_015/EnumeracoesDotnet/EnumeracoesDotnet
+dotnet run
+```
+
+Conversões úteis
+
+- Enum para string: `string s = OrderStatus.Processing.ToString();`
+- String para enum (seguro): `Enum.TryParse<OrderStatus>(input, out var status)` — preferível ao `Enum.Parse<T>`.
+- Enum para inteiro: `int value = (int)OrderStatus.Shipped;`
+- Inteiro para enum (valide com `Enum.IsDefined` antes de cast):
+  `if (Enum.IsDefined(typeof(OrderStatus), 2)) status = (OrderStatus)2;`
+
+Observações e sugestões de melhoria
+
+- Corrigir ortografia: `PendingPaymente` → `PendingPayment` (consistência com inglês e convenção PascalCase).
+- Visibilidade: atualmente `OrderStatus` e `Order` são `internal`; considere torná-los `public` se forem usados fora do assembly.
+- Prefira `Enum.TryParse` com `ignoreCase:true` quando ler strings externas.
+- Considere atribuir valores explícitos quando depender de valores numéricos persistidos (banco, API).
+- Para conjuntos de flags bitwise, use o atributo `[Flags]` e valores de potência de 2.
+- Boas práticas: nomes em `PascalCase`, evite comentários redundantes e use `ToString()` formatado quando necessário.
+
+Conceitos que faltam (sugestão de conteúdo a incluir no README do projeto)
+
+- Explicação sobre o tipo subjacente do `enum` (por padrão `int`) e como mudar (`: byte`, `: long`).
+- Uso de `Enum.IsDefined` para validar valores antes de converter.
+- Diferenças entre `Enum.Parse` e `Enum.TryParse` e riscos de exceção.
+- Exemplos de serialização/ desserialização (JSON) de enums e como controlar com `[JsonConverter]` ou configurar `System.Text.Json`.
+- Exemplo de testes unitários cobrindo parsing inválido e conversões.

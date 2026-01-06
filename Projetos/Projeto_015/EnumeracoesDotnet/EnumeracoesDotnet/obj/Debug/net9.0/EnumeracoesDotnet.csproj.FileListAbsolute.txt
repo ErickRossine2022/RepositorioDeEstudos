@@ -1,0 +1,14 @@
+C:\Users\Erick\Documents\C#\EnumeracoesDotnet\EnumeracoesDotnet\bin\Debug\net9.0\EnumeracoesDotnet.exe
+C:\Users\Erick\Documents\C#\EnumeracoesDotnet\EnumeracoesDotnet\bin\Debug\net9.0\EnumeracoesDotnet.deps.json
+C:\Users\Erick\Documents\C#\EnumeracoesDotnet\EnumeracoesDotnet\bin\Debug\net9.0\EnumeracoesDotnet.runtimeconfig.json
+C:\Users\Erick\Documents\C#\EnumeracoesDotnet\EnumeracoesDotnet\bin\Debug\net9.0\EnumeracoesDotnet.dll
+C:\Users\Erick\Documents\C#\EnumeracoesDotnet\EnumeracoesDotnet\bin\Debug\net9.0\EnumeracoesDotnet.pdb
+C:\Users\Erick\Documents\C#\EnumeracoesDotnet\EnumeracoesDotnet\obj\Debug\net9.0\EnumeracoesDotnet.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Erick\Documents\C#\EnumeracoesDotnet\EnumeracoesDotnet\obj\Debug\net9.0\EnumeracoesDotnet.AssemblyInfoInputs.cache
+C:\Users\Erick\Documents\C#\EnumeracoesDotnet\EnumeracoesDotnet\obj\Debug\net9.0\EnumeracoesDotnet.AssemblyInfo.cs
+C:\Users\Erick\Documents\C#\EnumeracoesDotnet\EnumeracoesDotnet\obj\Debug\net9.0\EnumeracoesDotnet.csproj.CoreCompileInputs.cache
+C:\Users\Erick\Documents\C#\EnumeracoesDotnet\EnumeracoesDotnet\obj\Debug\net9.0\EnumeracoesDotnet.dll
+C:\Users\Erick\Documents\C#\EnumeracoesDotnet\EnumeracoesDotnet\obj\Debug\net9.0\refint\EnumeracoesDotnet.dll
+C:\Users\Erick\Documents\C#\EnumeracoesDotnet\EnumeracoesDotnet\obj\Debug\net9.0\EnumeracoesDotnet.pdb
+C:\Users\Erick\Documents\C#\EnumeracoesDotnet\EnumeracoesDotnet\obj\Debug\net9.0\EnumeracoesDotnet.genruntimeconfig.cache
+C:\Users\Erick\Documents\C#\EnumeracoesDotnet\EnumeracoesDotnet\obj\Debug\net9.0\ref\EnumeracoesDotnet.dll
